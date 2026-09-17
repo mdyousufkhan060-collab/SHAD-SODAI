@@ -1,0 +1,7 @@
+{
+  "name": "SHAD GHOR",
+  "description": "বিশুদ্ধ খাবার, সরাসরি আপনার ঘরে",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
