@@ -324,7 +324,7 @@ export const SupportCenter = () => {
   };
 
   // Configurable Contact Options loaded from service
-  const [contactInfo, setContactInfo] = useState<ContactConfig>({ phone: '+8801712345678', whatsapp: '+8801712345678', email: 'support@shadghor.com' });
+  const [contactInfo, setContactInfo] = useState<ContactConfig>({ phone: '+8801712345678', whatsapp: '+8801712345678', email: 'support@shadshodai.com' });
 
   useEffect(() => {
     supportService.getContactConfig().then(setContactInfo);

@@ -32,8 +32,8 @@ export const Footer = () => {
 
   const getTranslation = (en: string, bn: string) => language === 'bn' ? bn : en;
 
-  const storeName = settings.company_name || settings.store_name || 'SHAD GHOR';
-  const storeLogo = settings.company_logo || settings.footer_logo_url || 'https://shadghor.com/wp-content/uploads/2023/11/Shad-Ghor-Logo-01.png';
+  const storeName = settings.company_name || settings.store_name || 'SHAD SHODAI';
+  const storeLogo = settings.company_logo || settings.footer_logo_url || 'https://shadshodai.com/wp-content/uploads/2023/11/Shad-Ghor-Logo-01.png';
 
   const socialLogos: Record<string, React.ReactNode> = {
     footer_social_facebook: (
@@ -68,10 +68,10 @@ export const Footer = () => {
   };
 
   const socialLinks = [
-    { key: 'footer_social_facebook', label: 'SHAD GHOR Facebook', defaultUrl: 'https://facebook.com/shadghor' },
-    { key: 'footer_social_instagram', label: 'SHAD GHOR Instagram', defaultUrl: 'https://instagram.com/shadghor' },
-    { key: 'footer_social_tiktok', label: 'SHAD GHOR TikTok', defaultUrl: 'https://tiktok.com/@shadghor' },
-    { key: 'footer_social_youtube', label: 'SHAD GHOR YouTube', defaultUrl: 'https://youtube.com/shadghor' }
+    { key: 'footer_social_facebook', label: 'SHAD SHODAI Facebook', defaultUrl: 'https://facebook.com/shadshodai' },
+    { key: 'footer_social_instagram', label: 'SHAD SHODAI Instagram', defaultUrl: 'https://instagram.com/shadshodai' },
+    { key: 'footer_social_tiktok', label: 'SHAD SHODAI TikTok', defaultUrl: 'https://tiktok.com/@shadshodai' },
+    { key: 'footer_social_youtube', label: 'SHAD SHODAI YouTube', defaultUrl: 'https://youtube.com/shadshodai' }
   ];
 
   const businessAddress = [
@@ -134,7 +134,7 @@ export const Footer = () => {
   if (isLoading) return null;
 
   return (
-    <footer className="bg-[#f0f9f4] pt-10 pb-6 border-t border-emerald-100 font-sans" id="shadghor-footer">
+    <footer className="bg-[#f0f9f4] pt-10 pb-6 border-t border-emerald-100 font-sans" id="shadshodai-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-8">
           
@@ -143,8 +143,8 @@ export const Footer = () => {
             <div className="flex flex-col gap-2">
               <a href="#/" className="block">
                 <img 
-                  src="https://shadghor.com/wp-content/uploads/2023/11/Shad-Ghor-Logo-01.png" 
-                  alt="SHAD GHOR" 
+                  src="https://shadshodai.com/wp-content/uploads/2023/11/Shad-Ghor-Logo-01.png" 
+                  alt="SHAD SHODAI" 
                   className="h-16 w-auto object-contain -ml-2" 
                 />
               </a>
@@ -173,8 +173,8 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-slate-900">
                 <Mail size={12} className="text-emerald-900 shrink-0" />
-                <a href={`mailto:${settings.store_email || settings.footer_contact_email || 'contact@shadghor.com'}`} className="text-[10.5px] font-bold hover:text-emerald-950">
-                  {settings.store_email || settings.footer_contact_email || 'contact@shadghor.com'}
+                <a href={`mailto:${settings.store_email || settings.footer_contact_email || 'contact@shadshodai.com'}`} className="text-[10.5px] font-bold hover:text-emerald-950">
+                  {settings.store_email || settings.footer_contact_email || 'contact@shadshodai.com'}
                 </a>
               </div>
             </div>

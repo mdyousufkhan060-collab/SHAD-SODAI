@@ -1,5 +1,5 @@
 /**
- * SHAD GHOR Tracking & Analytics Engine
+ * SHAD SHODAI Tracking & Analytics Engine
  * Professional-grade implementation for Meta Pixel (CAPI), TikTok Pixel (Events API), and GA4
  */
 

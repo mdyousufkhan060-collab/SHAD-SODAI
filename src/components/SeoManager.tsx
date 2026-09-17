@@ -163,9 +163,9 @@ export const SeoManager = () => {
     let schema: any = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "SHAD GHOR",
-      "url": "https://shadghor.com",
-      "logo": "https://shadghor.com/logo.png",
+      "name": "SHAD SHODAI",
+      "url": "https://shadshodai.com",
+      "logo": "https://shadshodai.com/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": activeSeo.store_phone || "",

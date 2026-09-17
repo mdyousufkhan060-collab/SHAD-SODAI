@@ -55,17 +55,17 @@ interface SeoStatus {
 }
 
 const DEFAULT_SEO: GlobalSeoSettings = {
-  seo_title: 'SHAD GHOR — Premium Organic Food Shop',
+  seo_title: 'SHAD SHODAI — Premium Organic Food Shop',
   seo_description: '১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।',
   seo_keywords: 'organic food, honey, ghee, dates, nuts, seeds, bangladesh',
-  seo_canonical: 'https://shadghor.com',
+  seo_canonical: 'https://shadshodai.com',
   seo_index: 'index',
   seo_follow: 'follow',
-  og_title: 'SHAD GHOR — Premium Organic Food Shop',
+  og_title: 'SHAD SHODAI — Premium Organic Food Shop',
   og_description: '১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।',
   og_image: '',
   twitter_card: 'summary_large_image',
-  twitter_title: 'SHAD GHOR — Premium Organic Food Shop',
+  twitter_title: 'SHAD SHODAI — Premium Organic Food Shop',
   twitter_description: '১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।',
   twitter_image: '',
   seo_auto_title: 'on',
@@ -534,7 +534,7 @@ export const AdminSeoSettings: React.FC<AdminSeoSettingsProps> = ({ language }) 
             </div>
             <div className="bg-white border border-gray-100 p-4 rounded-xl space-y-1.5 shadow-sm">
               <div className="flex items-center gap-1.5 text-[11px] text-gray-500 overflow-hidden">
-                <span className="whitespace-nowrap">shadghor.com ›</span>
+                <span className="whitespace-nowrap">shadshodai.com ›</span>
                 <span className="text-gray-400 truncate">{settings.seo_canonical.replace(/^https?:\/\//, '') || 'home'}</span>
               </div>
               <h4 className="text-[15px] text-blue-800 font-medium hover:underline cursor-pointer leading-tight break-words">
@@ -564,7 +564,7 @@ export const AdminSeoSettings: React.FC<AdminSeoSettingsProps> = ({ language }) 
                 )}
               </div>
               <div className="p-3 bg-gray-50 space-y-1 border-t border-gray-100">
-                <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">SHADGHOR.COM</span>
+                <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">SHADSHODAI.COM</span>
                 <h5 className="text-[12px] font-black text-gray-800 truncate">{settings.og_title || settings.seo_title}</h5>
                 <p className="text-[11px] text-gray-500 line-clamp-2 leading-tight">{settings.og_description || settings.seo_description}</p>
               </div>
@@ -583,8 +583,8 @@ export const AdminSeoSettings: React.FC<AdminSeoSettingsProps> = ({ language }) 
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "${settings.seo_title.split('—')[0].trim()}",
-  "url": "https://shadghor.com",
-  "logo": "https://shadghor.com/logo.png"
+  "url": "https://shadshodai.com",
+  "logo": "https://shadshodai.com/logo.png"
 }`}
               </pre>
             </div>

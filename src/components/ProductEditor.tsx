@@ -46,7 +46,6 @@ export const ProductEditor: React.FC<{
 
   // Categories & Brands list
   const [categories, setCategories] = useState<any[]>([]);
-  const [brands, setBrands] = useState<any[]>([]);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -55,7 +54,7 @@ export const ProductEditor: React.FC<{
     sku: '',
     category: 'Dry Food',
     category_id: '',
-    brand: 'Shad Ghor',
+    brand: '',
     unit: 'kg',
     status: 'active' as 'active' | 'inactive' | 'draft',
     condition_type: 'new',
@@ -121,7 +120,7 @@ export const ProductEditor: React.FC<{
   const [faqs, setFaqs] = useState<FAQItem[]>([
     {
       question: 'Is this product 100% authentic and fresh?',
-      answer: 'Yes! All Shad Ghor dry food items are directly sourced from authentic origins and hygienically packed without chemical treatments.'
+      answer: 'Yes! All SHAD SHODAI dry food items are directly sourced from authentic origins and hygienically packed without chemical treatments.'
     },
     {
       question: 'How long can I store this after opening?',
@@ -145,15 +144,6 @@ export const ProductEditor: React.FC<{
         if (Array.isArray(data)) setCategories(data);
       })
       .catch(err => console.error('Failed to load categories', err));
-
-    // Load active brands from database
-    fetch('/api/brands')
-      .then(res => res.json())
-      .then(data => {
-        const list = Array.isArray(data) ? data : (data.brands || []);
-        setBrands(list.filter((b: any) => b.status === 'active'));
-      })
-      .catch(err => console.error('Failed to load brands', err));
 
     // Load Product for Edit
     if (productId) {
@@ -281,7 +271,7 @@ export const ProductEditor: React.FC<{
         ...prev,
         name: val,
         slug: generatedSlug,
-        seo_title: prev.seo_title || `${val} | Shad Ghor`
+        seo_title: prev.seo_title || `${val} | SHAD SHODAI`
       };
     });
   };
@@ -788,42 +778,18 @@ export const ProductEditor: React.FC<{
               </select>
             </div>
 
-            {/* Brand Dropdown (Active Database Brands) */}
+            {/* Brand */}
             <div className="space-y-1">
-              <div className="flex items-center justify-between">
-                <label className="text-xs font-bold text-gray-700">
-                  {language === 'bn' ? 'ব্র্যান্ড *' : 'Brand *'}
-                </label>
-                <span className="text-[10px] text-emerald-600 font-semibold">
-                  {brands.length} {language === 'bn' ? 'টি অ্যাক্টিভ ব্র্যান্ড' : 'Active Brands'}
-                </span>
-              </div>
-              <select
+              <label className="text-xs font-bold text-gray-700">
+                {language === 'bn' ? 'ব্র্যান্ড' : 'Brand'}
+              </label>
+              <input
+                type="text"
                 value={formData.brand}
-                onChange={(e) => {
-                  const selectedBrand = e.target.value;
-                  const found = brands.find((b: any) => b.name === selectedBrand || b.slug === selectedBrand);
-                  setFormData(prev => ({
-                    ...prev,
-                    brand: selectedBrand,
-                    brand_id: found ? found.id : (prev as any).brand_id
-                  }));
-                }}
-                className="w-full text-xs font-semibold px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-hidden focus:border-emerald-500 focus:bg-white transition-all text-gray-800 cursor-pointer"
-              >
-                <option value="">{language === 'bn' ? '-- ব্র্যান্ড সিলেক্ট করুন --' : '-- Select Brand --'}</option>
-                {brands.map((b: any) => (
-                  <option key={b.id || b.slug} value={b.name}>
-                    {b.name} {b.localName ? `(${b.localName})` : ''}
-                  </option>
-                ))}
-                {/* Keep current brand visible if previously saved or legacy */}
-                {formData.brand && !brands.some((b: any) => b.name.toLowerCase() === formData.brand.toLowerCase()) && (
-                  <option value={formData.brand}>
-                    {formData.brand} ({language === 'bn' ? 'বর্তমান' : 'Current'})
-                  </option>
-                )}
-              </select>
+                onChange={(e) => setFormData(prev => ({ ...prev, brand: e.target.value }))}
+                placeholder="SHAD SHODAI"
+                className="w-full text-xs font-semibold px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:outline-hidden focus:border-emerald-500 focus:bg-white transition-all text-gray-800"
+              />
             </div>
 
             {/* Unit / Pack Size */}
@@ -1738,7 +1704,7 @@ export const ProductEditor: React.FC<{
               </label>
               <div className="flex items-center">
                 <span className="text-xs font-mono text-gray-400 bg-gray-100 px-3 py-2 border border-r-0 border-gray-200 rounded-l-xl">
-                  shadghor.com/products/
+                  shadshodai.com/products/
                 </span>
                 <input
                   type="text"
@@ -1760,7 +1726,7 @@ export const ProductEditor: React.FC<{
                 type="text"
                 value={formData.seo_title}
                 onChange={(e) => setFormData(prev => ({ ...prev, seo_title: e.target.value }))}
-                placeholder={formData.name ? `${formData.name} | Shad Ghor` : 'Meta Title'}
+                placeholder={formData.name ? `${formData.name} | SHAD SHODAI` : 'Meta Title'}
                 className="w-full text-xs font-semibold px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-800"
               />
             </div>
@@ -1784,13 +1750,13 @@ export const ProductEditor: React.FC<{
             <div className="p-4 bg-gray-50 border border-gray-200 rounded-xl space-y-1">
               <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest block">Google Search Preview</span>
               <p className="text-xs text-[#202124] font-medium font-sans">
-                https://shadghor.com/products/{formData.slug || 'product-slug'}
+                https://shadshodai.com/products/{formData.slug || 'product-slug'}
               </p>
               <h3 className="text-sm font-semibold text-[#1a0dab] hover:underline cursor-pointer">
-                {formData.seo_title || formData.name || 'Product Title | Shad Ghor'}
+                {formData.seo_title || formData.name || 'Product Title | SHAD SHODAI'}
               </h3>
               <p className="text-xs text-[#4d5156] line-clamp-2">
-                {formData.seo_description || formData.short_description || 'Explore premium authentic dry food, organic nuts and dates with cash on delivery at Shad Ghor.'}
+                {formData.seo_description || formData.short_description || 'Explore premium authentic dry food, organic nuts and dates with cash on delivery at SHAD SHODAI.'}
               </p>
             </div>
           </div>

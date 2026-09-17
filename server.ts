@@ -128,32 +128,32 @@ async function seedDataIfEmpty() {
       console.log('[MySQL] Seeding demo products...');
       const products = [
         // PURE SPICES
-        ['p_1', 'Premium Turmeric Powder', 180, 200, 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=500&h=500&fit=crop', 'Pure Spices', 5.0, 'Pure', 100, 'Shad Ghor', 'active', new Date().toISOString(), 'Premium turmeric powder for natural color and health.', 'প্রিমিয়াম হলুদ গুঁড়ো', '500g', 120, 15, 'premium-turmeric-500g', true],
-        ['p_2', 'Red Chili Powder', 220, 250, 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=500&fit=crop', 'Pure Spices', 4.8, 'Hot', 85, 'Shad Ghor', 'active', new Date().toISOString(), 'Selected red chilies powdered for intense heat and color.', 'লাল মরিচ গুঁড়ো', '500g', 95, 12, 'red-chili-powder-500g', true],
-        ['p_3', 'Cumin Powder', 150, 180, 'https://images.unsplash.com/photo-1613554832607-58037a28a382?w=500&h=500&fit=crop', 'Pure Spices', 4.9, 'Aromatic', 120, 'Shad Ghor', 'active', new Date().toISOString(), 'Finely ground cumin seeds for rich aroma.', 'জিরা গুঁড়ো', '250g', 150, 22, 'cumin-powder-250g', true],
-        ['p_4', 'Ginger Powder', 120, 140, 'https://images.unsplash.com/photo-1599307734110-d0124195156a?w=500&h=500&fit=crop', 'Pure Spices', 4.7, 'Natural', 50, 'Shad Ghor', 'active', new Date().toISOString(), 'Pure ginger root powder for health and cooking.', 'আদা গুঁড়ো', '200g', 80, 8, 'ginger-powder-200g', true],
-        ['p_5', 'Garlic Powder', 130, 150, 'https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=500&h=500&fit=crop', 'Pure Spices', 4.6, 'Pure', 45, 'Shad Ghor', 'active', new Date().toISOString(), 'Premium garlic powder for instant flavor.', 'রসুন গুঁড়ো', '200g', 75, 10, 'garlic-powder-200g', true],
-        ['p_6', 'Bay Leaf', 80, 100, 'https://images.unsplash.com/photo-1609131009311-66774e1d6700?w=500&h=500&fit=crop', 'Pure Spices', 4.5, 'Fresh', 200, 'Shad Ghor', 'active', new Date().toISOString(), 'Selected fresh bay leaves for rich cooking aroma.', 'তেজপাতা', '100g', 60, 5, 'bay-leaf-100g', true],
-        ['p_7', 'Black Pepper', 160, 180, 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=500&h=500&fit=crop', 'Pure Spices', 4.9, 'Spicy', 150, 'Shad Ghor', 'active', new Date().toISOString(), 'Aromatic black pepper for intense flavor.', 'গোলমরিচ', '100g', 110, 18, 'black-pepper-100g', true],
+        ['p_1', 'Premium Turmeric Powder', 180, 200, 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=500&h=500&fit=crop', 'Pure Spices', 5.0, 'Pure', 100, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Premium turmeric powder for natural color and health.', 'প্রিমিয়াম হলুদ গুঁড়ো', '500g', 120, 15, 'premium-turmeric-500g', true],
+        ['p_2', 'Red Chili Powder', 220, 250, 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=500&fit=crop', 'Pure Spices', 4.8, 'Hot', 85, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Selected red chilies powdered for intense heat and color.', 'লাল মরিচ গুঁড়ো', '500g', 95, 12, 'red-chili-powder-500g', true],
+        ['p_3', 'Cumin Powder', 150, 180, 'https://images.unsplash.com/photo-1613554832607-58037a28a382?w=500&h=500&fit=crop', 'Pure Spices', 4.9, 'Aromatic', 120, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Finely ground cumin seeds for rich aroma.', 'জিরা গুঁড়ো', '250g', 150, 22, 'cumin-powder-250g', true],
+        ['p_4', 'Ginger Powder', 120, 140, 'https://images.unsplash.com/photo-1599307734110-d0124195156a?w=500&h=500&fit=crop', 'Pure Spices', 4.7, 'Natural', 50, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Pure ginger root powder for health and cooking.', 'আদা গুঁড়ো', '200g', 80, 8, 'ginger-powder-200g', true],
+        ['p_5', 'Garlic Powder', 130, 150, 'https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=500&h=500&fit=crop', 'Pure Spices', 4.6, 'Pure', 45, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Premium garlic powder for instant flavor.', 'রসুন গুঁড়ো', '200g', 75, 10, 'garlic-powder-200g', true],
+        ['p_6', 'Bay Leaf', 80, 100, 'https://images.unsplash.com/photo-1609131009311-66774e1d6700?w=500&h=500&fit=crop', 'Pure Spices', 4.5, 'Fresh', 200, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Selected fresh bay leaves for rich cooking aroma.', 'তেজপাতা', '100g', 60, 5, 'bay-leaf-100g', true],
+        ['p_7', 'Black Pepper', 160, 180, 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=500&h=500&fit=crop', 'Pure Spices', 4.9, 'Spicy', 150, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Aromatic black pepper for intense flavor.', 'গোলমরিচ', '100g', 110, 18, 'black-pepper-100g', true],
         
         // HONEY & OIL
-        ['p_8', 'Premium Natural Honey', 450, 500, 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&h=500&fit=crop', 'Honey & Oil', 4.9, 'Pure', 100, 'Shad Ghor', 'active', new Date().toISOString(), '100% natural and organic honey from sundarbans.', 'প্রিমিয়াম প্রাকৃতিক মধু', '500g', 250, 45, 'natural-honey-500g', true],
-        ['p_9', 'Pure Mustard Oil', 420, 480, 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=500&h=500&fit=crop', 'Honey & Oil', 4.8, 'Cold Pressed', 150, 'Shad Ghor', 'active', new Date().toISOString(), 'Traditional cold pressed mustard oil for authentic taste.', 'খাঁটি সরিষার তেল', '1L', 180, 32, 'mustard-oil-1l', true],
+        ['p_8', 'Premium Natural Honey', 450, 500, 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&h=500&fit=crop', 'Honey & Oil', 4.9, 'Pure', 100, 'SHAD SHODAI', 'active', new Date().toISOString(), '100% natural and organic honey from sundarbans.', 'প্রিমিয়াম প্রাকৃতিক মধু', '500g', 250, 45, 'natural-honey-500g', true],
+        ['p_9', 'Pure Mustard Oil', 420, 480, 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=500&h=500&fit=crop', 'Honey & Oil', 4.8, 'Cold Pressed', 150, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Traditional cold pressed mustard oil for authentic taste.', 'খাঁটি সরিষার তেল', '1L', 180, 32, 'mustard-oil-1l', true],
         
         // GHEE
-        ['p_10', 'Premium Desi Ghee', 850, 950, 'https://images.unsplash.com/photo-1631709497146-a239ef373cf1?w=500&h=500&fit=crop', 'Ghee', 5.0, 'Premium', 80, 'Shad Ghor', 'active', new Date().toISOString(), 'Pure home-made desi ghee with authentic aroma.', 'প্রিমিয়াম দেশি ঘি', '500g', 320, 50, 'desi-ghee-500g', true],
+        ['p_10', 'Premium Desi Ghee', 850, 950, 'https://images.unsplash.com/photo-1631709497146-a239ef373cf1?w=500&h=500&fit=crop', 'Ghee', 5.0, 'Premium', 80, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Pure home-made desi ghee with authentic aroma.', 'প্রিমিয়াম দেশি ঘি', '500g', 320, 50, 'desi-ghee-500g', true],
         
         // SALT
-        ['p_11', 'Himalayan Pink Salt', 180, 220, 'https://images.unsplash.com/photo-1615485242227-463270997c45?w=500&h=500&fit=crop', 'Salt', 4.8, 'Healthy', 200, 'Shad Ghor', 'active', new Date().toISOString(), 'Natural mineral rich pink salt for better health.', 'হিমালয়ান পিঙ্ক সল্ট', '1kg', 140, 25, 'pink-salt-1kg', true],
+        ['p_11', 'Himalayan Pink Salt', 180, 220, 'https://images.unsplash.com/photo-1615485242227-463270997c45?w=500&h=500&fit=crop', 'Salt', 4.8, 'Healthy', 200, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Natural mineral rich pink salt for better health.', 'হিমালয়ান পিঙ্ক সল্ট', '1kg', 140, 25, 'pink-salt-1kg', true],
         
         // NUTS & SEEDS
-        ['p_12', 'Premium Cashew Nuts', 350, 400, 'https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?w=500&h=500&fit=crop', 'Nuts & Seeds', 4.9, 'Premium', 120, 'Shad Ghor', 'active', new Date().toISOString(), 'High quality roasted cashew nuts.', 'প্রিমিয়াম কাজু বাদাম', '250g', 210, 38, 'cashew-nuts-250g', true],
-        ['p_13', 'Almond Nuts', 320, 360, 'https://images.unsplash.com/photo-1508815121300-4b17a3a1d827?w=500&h=500&fit=crop', 'Nuts & Seeds', 4.8, 'Natural', 100, 'Shad Ghor', 'active', new Date().toISOString(), 'Premium quality almonds for healthy snack.', 'কাঠ বাদাম', '250g', 185, 24, 'almonds-250g', true],
-        ['p_14', 'Premium Mixed Nuts', 650, 750, 'https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?w=500&h=500&fit=crop', 'Nuts & Seeds', 5.0, 'Best Mix', 60, 'Shad Ghor', 'active', new Date().toISOString(), 'A perfect mix of various premium nuts.', 'প্রিমিয়াম মিক্সড বাদাম', '500g', 310, 42, 'mixed-nuts-500g', true],
+        ['p_12', 'Premium Cashew Nuts', 350, 400, 'https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?w=500&h=500&fit=crop', 'Nuts & Seeds', 4.9, 'Premium', 120, 'SHAD SHODAI', 'active', new Date().toISOString(), 'High quality roasted cashew nuts.', 'প্রিমিয়াম কাজু বাদাম', '250g', 210, 38, 'cashew-nuts-250g', true],
+        ['p_13', 'Almond Nuts', 320, 360, 'https://images.unsplash.com/photo-1508815121300-4b17a3a1d827?w=500&h=500&fit=crop', 'Nuts & Seeds', 4.8, 'Natural', 100, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Premium quality almonds for healthy snack.', 'কাঠ বাদাম', '250g', 185, 24, 'almonds-250g', true],
+        ['p_14', 'Premium Mixed Nuts', 650, 750, 'https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?w=500&h=500&fit=crop', 'Nuts & Seeds', 5.0, 'Best Mix', 60, 'SHAD SHODAI', 'active', new Date().toISOString(), 'A perfect mix of various premium nuts.', 'প্রিমিয়াম মিক্সড বাদাম', '500g', 310, 42, 'mixed-nuts-500g', true],
         
         // DRY FOODS
-        ['p_15', 'Premium Dry Food Mix', 550, 600, 'https://images.unsplash.com/photo-1628102476629-f813bc616892?w=500&h=500&fit=crop', 'Dry Foods', 4.7, 'Healthy', 90, 'Shad Ghor', 'active', new Date().toISOString(), 'Healthy mix of dry fruits and seeds.', 'প্রিমিয়াম ড্রাই ফুড মিক্স', '500g', 245, 28, 'dry-food-mix-500g', true],
-        ['p_16', 'Premium Dates', 400, 450, 'https://images.unsplash.com/photo-1596701062351-8a29e4d3f5f4?w=500&h=500&fit=crop', 'Dry Foods', 4.9, 'Pure', 110, 'Shad Ghor', 'active', new Date().toISOString(), 'Premium quality dates for energy and health.', 'প্রিমিয়াম খেজুর', '500g', 200, 35, 'premium-dates-500g', true],
+        ['p_15', 'Premium Dry Food Mix', 550, 600, 'https://images.unsplash.com/photo-1628102476629-f813bc616892?w=500&h=500&fit=crop', 'Dry Foods', 4.7, 'Healthy', 90, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Healthy mix of dry fruits and seeds.', 'প্রিমিয়াম ড্রাই ফুড মিক্স', '500g', 245, 28, 'dry-food-mix-500g', true],
+        ['p_16', 'Premium Dates', 400, 450, 'https://images.unsplash.com/photo-1596701062351-8a29e4d3f5f4?w=500&h=500&fit=crop', 'Dry Foods', 4.9, 'Pure', 110, 'SHAD SHODAI', 'active', new Date().toISOString(), 'Premium quality dates for energy and health.', 'প্রিমিয়াম খেজুর', '500g', 200, 35, 'premium-dates-500g', true],
       ];
       for (const p of products) {
         await db.executePrepared(
@@ -2231,45 +2231,19 @@ app.delete('/api/admin/categories/:id', requireAdminAuth, async (req, res) => {
 // PUBLIC: Get active brands for Customer Panel
 app.get('/api/brands', async (req, res) => {
   try {
-    const brands = await db.executePrepared("SELECT * FROM brands WHERE status = 'active' ORDER BY display_order ASC, name ASC");
-    res.json(brands);
+    const brands = await db.executePrepared("SELECT * FROM brands WHERE status = 'active' ORDER BY name ASC");
+    res.json({ success: true, brands });
   } catch (err: any) {
     console.error('[Public Get Brands Error] ', err);
     res.status(500).json({ error: 'Failed to fetch brands.', details: err.message });
   }
 });
 
-// PUBLIC: Get single brand by slug or ID
-app.get('/api/brands/:slug', async (req, res) => {
-  try {
-    const { slug } = req.params;
-    const rows = await db.executePrepared("SELECT * FROM brands WHERE slug = ? OR id = ? LIMIT 1", [slug, slug]);
-    if (!rows || rows.length === 0) {
-      return res.status(404).json({ error: 'Brand not found.' });
-    }
-    res.json(rows[0]);
-  } catch (err: any) {
-    console.error('[Public Get Brand by Slug Error] ', err);
-    res.status(500).json({ error: 'Failed to fetch brand.', details: err.message });
-  }
-});
-
 // ADMIN: Get all brands with statistics
 app.get('/api/admin/brands', requireAdminAuth, async (req, res) => {
   try {
-    const brands = await db.executePrepared("SELECT * FROM brands ORDER BY display_order ASC, createdAt DESC");
+    const brands = await db.executePrepared("SELECT * FROM brands ORDER BY createdAt DESC");
     
-    // Dynamically calculate accurate product_count for each brand
-    for (const b of brands) {
-      if (b.product_count === undefined) {
-        const pRows = await db.executePrepared(
-          "SELECT COUNT(*) as cnt FROM products WHERE brand_id = ? OR brand = ? OR brand = ?",
-          [b.id, b.name, b.slug]
-        );
-        b.product_count = pRows && pRows.length > 0 ? (pRows[0].cnt || pRows[0].total || 0) : 0;
-      }
-    }
-
     const totalBrands = brands.length;
     const activeBrands = brands.filter((b: any) => b.status === 'active').length;
     const inactiveBrands = brands.filter((b: any) => b.status === 'inactive').length;
@@ -2295,32 +2269,12 @@ app.get('/api/admin/brands', requireAdminAuth, async (req, res) => {
   }
 });
 
-// ADMIN: Get products connected to a specific brand
-app.get('/api/admin/brands/:id/products', requireAdminAuth, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const brandRows = await db.executePrepared("SELECT * FROM brands WHERE id = ? LIMIT 1", [id]);
-    if (!brandRows || brandRows.length === 0) {
-      return res.status(404).json({ error: 'Brand not found.' });
-    }
-    const brand = brandRows[0];
-    const products = await db.executePrepared(
-      "SELECT id, name, name_bn, sku, price, old_price, stock_quantity, unit, image_url, category, brand, status FROM products WHERE brand_id = ? OR brand = ? OR brand = ? ORDER BY created_at DESC",
-      [id, brand.name, brand.slug]
-    );
-    res.json({ success: true, brand, products: products || [] });
-  } catch (err: any) {
-    console.error('[Admin Get Brand Products Error]', err);
-    res.status(500).json({ error: 'Failed to fetch brand products.', details: err.message });
-  }
-});
-
 // ADMIN: Create Brand
 app.post('/api/admin/brands', requireAdminAuth, async (req, res) => {
   try {
     const {
       name, localName, slug, logo, banner, shortDescription, description,
-      countryOfOrigin, officialWebsite, display_order, status, featured, seoTitle,
+      countryOfOrigin, officialWebsite, status, featured, seoTitle,
       metaDescription, seoKeywords, canonicalUrl, logoAlt
     } = req.body;
 
@@ -2337,11 +2291,11 @@ app.post('/api/admin/brands', requireAdminAuth, async (req, res) => {
     }
 
     await db.executePrepared(
-      `INSERT INTO brands (id, name, localName, slug, logo, banner, shortDescription, description, countryOfOrigin, officialWebsite, display_order, status, featured, seoTitle, metaDescription, seoKeywords, canonicalUrl, logoAlt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO brands (id, name, localName, slug, logo, banner, shortDescription, description, countryOfOrigin, officialWebsite, status, featured, seoTitle, metaDescription, seoKeywords, canonicalUrl, logoAlt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brandId, name.trim(), localName || '', brandSlug, logo || 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=150&h=150&fit=crop',
         banner || '', shortDescription || '', description || '', countryOfOrigin || '', officialWebsite || '',
-        display_order !== undefined ? Number(display_order) : 0, status || 'active', featured ? 1 : 0, seoTitle || name, metaDescription || shortDescription || '',
+        status || 'active', featured ? 1 : 0, seoTitle || name, metaDescription || shortDescription || '',
         seoKeywords || '', canonicalUrl || '', logoAlt || name
       ]
     );
@@ -2359,7 +2313,7 @@ app.put('/api/admin/brands/:id', requireAdminAuth, async (req, res) => {
     const { id } = req.params;
     const {
       name, localName, slug, logo, banner, shortDescription, description,
-      countryOfOrigin, officialWebsite, display_order, status, featured, seoTitle,
+      countryOfOrigin, officialWebsite, status, featured, seoTitle,
       metaDescription, seoKeywords, canonicalUrl, logoAlt
     } = req.body;
 
@@ -2370,10 +2324,10 @@ app.put('/api/admin/brands/:id', requireAdminAuth, async (req, res) => {
     const brandSlug = slug && slug.trim() ? slug.trim() : name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
     await db.executePrepared(
-      `UPDATE brands SET name = ?, localName = ?, slug = ?, logo = ?, banner = ?, shortDescription = ?, description = ?, countryOfOrigin = ?, officialWebsite = ?, display_order = ?, status = ?, featured = ?, seoTitle = ?, metaDescription = ?, seoKeywords = ?, canonicalUrl = ?, logoAlt = ? WHERE id = ?`,
+      `UPDATE brands SET name = ?, localName = ?, slug = ?, logo = ?, banner = ?, shortDescription = ?, description = ?, countryOfOrigin = ?, officialWebsite = ?, status = ?, featured = ?, seoTitle = ?, metaDescription = ?, seoKeywords = ?, canonicalUrl = ?, logoAlt = ? WHERE id = ?`,
       [
         name.trim(), localName || '', brandSlug, logo || '', banner || '', shortDescription || '', description || '',
-        countryOfOrigin || '', officialWebsite || '', display_order !== undefined ? Number(display_order) : 0, status || 'active', featured ? 1 : 0,
+        countryOfOrigin || '', officialWebsite || '', status || 'active', featured ? 1 : 0,
         seoTitle || '', metaDescription || '', seoKeywords || '', canonicalUrl || '', logoAlt || '', id
       ]
     );
@@ -2390,21 +2344,20 @@ app.delete('/api/admin/brands/:id', requireAdminAuth, async (req, res) => {
   try {
     const { id } = req.params;
 
-    const [brand]: any = await db.executePrepared("SELECT * FROM brands WHERE id = ? LIMIT 1", [id]);
+    const [brand]: any = await db.executePrepared("SELECT name FROM brands WHERE id = ? LIMIT 1", [id]);
     if (!brand) {
       return res.status(404).json({ error: 'Brand not found.' });
     }
     const brandName = brand.name;
-    const brandSlug = brand.slug;
 
-    const products = await db.executePrepared("SELECT id FROM products WHERE brand_id = ? OR brand = ? OR brand = ?", [id, brandName, brandSlug]);
+    const products = await db.executePrepared("SELECT id FROM products WHERE brand = ? OR brand = ?", [id, brandName]);
     const productCount = products ? products.length : 0;
 
     if (productCount > 0) {
       return res.status(400).json({
         error: 'HAS_PRODUCTS',
         productCount,
-        message: `This brand is currently connected to ${productCount} products. Please deactivate the brand or reassign its products before deleting.`
+        message: `This brand is currently used by ${productCount} products. Please deactivate the brand or reassign its products before deleting.`
       });
     }
 
@@ -2462,6 +2415,254 @@ app.post('/api/admin/brands/bulk', requireAdminAuth, async (req, res) => {
 });
 
 // ----------------- GENERAL SETTINGS API (MySQL PERSISTENCE) -----------------
+
+// ----------------- GLOBAL WEBSITE BRANDING API (MySQL PERSISTENCE) -----------------
+
+const BRANDING_KEYS = [
+  'site_name', 'site_name_bn', 'short_name', 'tagline', 'tagline_bn',
+  'business_type', 'brand_keywords', 'brand_description', 'brand_description_bn',
+  'copyright_text', 'copyright_text_bn',
+  'tagline_enabled', 'tagline_text', 'tagline_text_bn', 'tagline_link', 'tagline_link_target',
+  'tagline_align', 'tagline_show_desktop', 'tagline_show_mobile', 'tagline_bg_color', 'tagline_text_color',
+  'primary_logo', 'compact_logo', 'favicon', 'social_image', 'loading_logo', 'admin_logo', 'footer_logo',
+  'primary_color', 'secondary_color', 'accent_color', 'text_color', 'bg_color',
+  'seo_title', 'seo_description', 'seo_keywords', 'og_title', 'og_description', 'og_image', 'twitter_card', 'canonical_url',
+  'store_phone', 'store_whatsapp', 'store_email', 'store_address', 'store_city', 'store_district', 'store_country',
+  'support_hours', 'website_url'
+];
+
+const DEFAULT_BRANDING_VALUES: Record<string, any> = {
+  site_name: 'SHAD SHODAI',
+  site_name_bn: 'স্বাদ সদাই',
+  short_name: 'ShadShodai',
+  tagline: '100% Pure & Organic Grocery in Bangladesh',
+  tagline_bn: '১০০% খাঁটি ও প্রাকৃতিক খাবারের বিশ্বস্ত প্রতিষ্ঠান',
+  business_type: 'Online Organic Grocery & Food Store',
+  brand_keywords: 'organic food, pure honey, mustard oil, desi ghee, spices, nuts, dry fruits, bangladesh, shad shodai',
+  brand_description: 'SHAD SHODAI is a premier organic e-commerce destination in Bangladesh, delivering premium pure spices, natural honey, cold-pressed mustard oil, homemade desi ghee, handpicked nuts, and wholesome dry foods directly from authentic sources to your doorstep with guaranteed purity and prompt delivery across the nation.',
+  brand_description_bn: 'স্বাদ সদাই বাংলাদেশের একটি নির্ভরযোগ্য প্রিমিয়াম অর্গানিক ফুড শপ। ১০০% খাঁটি মসলা, সুন্দরবনের মধু, ঘানির সরিষার তেল, দেশি গাওয়া ঘি, প্রিমিয়াম বাদাম ও ড্রাই ফ্রুটস সরাসরি গ্রাহকের দোরগোড়ায় পৌঁছে দেয়।',
+  copyright_text: '© 2026 SHAD SHODAI. All Rights Reserved.',
+  copyright_text_bn: '© ২০২৬ স্বাদ সদাই। সর্বস্বত্ব সংরক্ষিত।',
+
+  tagline_enabled: 'true',
+  tagline_text: '🌿 Free Delivery on Orders Over ৳1500 | 100% Pure Organic Guarantee',
+  tagline_text_bn: '🌿 ১৫০০ টাকার বেশি অর্ডারে ফ্রি ডেলিভারি | ১০০% খাঁটি ও অর্গানিক পণ্যের নিশ্চয়তা',
+  tagline_link: '#/offers',
+  tagline_link_target: '_self',
+  tagline_align: 'center',
+  tagline_show_desktop: 'true',
+  tagline_show_mobile: 'true',
+  tagline_bg_color: '#065f46',
+  tagline_text_color: '#ffffff',
+
+  primary_logo: '',
+  compact_logo: '',
+  favicon: '',
+  social_image: '',
+  loading_logo: '',
+  admin_logo: '',
+  footer_logo: '',
+
+  primary_color: '#059669',
+  secondary_color: '#047857',
+  accent_color: '#f59e0b',
+  text_color: '#1f2937',
+  bg_color: '#ffffff',
+
+  seo_title: 'SHAD SHODAI — Pure & Organic Grocery Shop',
+  seo_description: 'Buy 100% pure organic spices, natural honey, cold-pressed mustard oil, desi ghee, and premium dry foods online in Bangladesh from SHAD SHODAI.',
+  seo_keywords: 'shad shodai, organic food bangladesh, pure honey, mustard oil, desi ghee, spices, dry fruits',
+  og_title: 'SHAD SHODAI — Pure & Organic Grocery Shop',
+  og_description: '100% Pure & Organic Grocery & Natural Food in Bangladesh. Fast home delivery.',
+  og_image: '',
+  twitter_card: 'summary_large_image',
+  canonical_url: 'https://shadshodai.com',
+
+  store_phone: '+880 1700-000000',
+  store_whatsapp: '+880 1700-000000',
+  store_email: 'info@shadshodai.com',
+  store_address: 'Rampura, Dhaka, Bangladesh',
+  store_city: 'Dhaka',
+  store_district: 'Dhaka',
+  store_country: 'Bangladesh',
+  support_hours: 'Sat - Thu: 9:00 AM - 9:00 PM',
+  website_url: 'https://shadshodai.com'
+};
+
+const getBrandingSettings = async () => {
+  const result: Record<string, any> = { ...DEFAULT_BRANDING_VALUES };
+  
+  for (const key of BRANDING_KEYS) {
+    const rows = await db.executePrepared("SELECT config_value FROM site_settings WHERE config_key = ? LIMIT 1", [key]);
+    if (rows.length > 0 && rows[0].config_value !== null && rows[0].config_value !== undefined) {
+      const val = rows[0].config_value;
+      if (key === 'tagline_enabled' || key === 'tagline_show_desktop' || key === 'tagline_show_mobile') {
+        result[key] = val === 'true' || val === true || val === '1' || val === 1;
+      } else {
+        result[key] = val;
+      }
+    } else {
+      if (key === 'tagline_enabled' || key === 'tagline_show_desktop' || key === 'tagline_show_mobile') {
+        result[key] = DEFAULT_BRANDING_VALUES[key] === 'true';
+      }
+    }
+  }
+
+  // Cross-check legacy keys if branding keys were empty
+  if (!result.primary_logo) {
+    const legacyLogoRows = await db.executePrepared("SELECT config_value FROM site_settings WHERE config_key IN ('store_logo', 'company_logo', 'footer_logo_url') AND config_value != '' LIMIT 1", []);
+    if (legacyLogoRows.length > 0) {
+      result.primary_logo = legacyLogoRows[0].config_value;
+    }
+  }
+  if (!result.site_name) {
+    const legacyNameRows = await db.executePrepared("SELECT config_value FROM site_settings WHERE config_key IN ('store_name', 'company_name') AND config_value != '' LIMIT 1", []);
+    if (legacyNameRows.length > 0) {
+      result.site_name = legacyNameRows[0].config_value;
+    }
+  }
+  if (!result.favicon) {
+    const legacyFavRows = await db.executePrepared("SELECT config_value FROM site_settings WHERE config_key = 'store_favicon' AND config_value != '' LIMIT 1", []);
+    if (legacyFavRows.length > 0) {
+      result.favicon = legacyFavRows[0].config_value;
+    }
+  }
+
+  return result;
+};
+
+// GET Public Branding
+app.get('/api/branding', async (req, res) => {
+  try {
+    const data = await getBrandingSettings();
+    res.json(data);
+  } catch (err) {
+    console.error('[Get Branding Error] ', err);
+    res.status(500).json({ error: 'Failed to retrieve branding settings.' });
+  }
+});
+
+// GET Admin Branding
+app.get('/api/admin/branding', requireAdminAuth, async (req, res) => {
+  try {
+    const data = await getBrandingSettings();
+    res.json(data);
+  } catch (err) {
+    console.error('[Get Admin Branding Error] ', err);
+    res.status(500).json({ error: 'Failed to retrieve admin branding settings.' });
+  }
+});
+
+// POST Admin Branding
+app.post('/api/admin/branding', requireAdminAuth, async (req, res) => {
+  try {
+    const data = req.body;
+    const updatedAt = new Date().toISOString();
+
+    for (const [key, val] of Object.entries(data)) {
+      if (BRANDING_KEYS.includes(key)) {
+        const stringVal = typeof val === 'boolean' ? (val ? 'true' : 'false') : String(val ?? '');
+        const rows = await db.executePrepared("SELECT id FROM site_settings WHERE config_key = ? LIMIT 1", [key]);
+        if (rows.length > 0) {
+          await db.executePrepared("UPDATE site_settings SET config_value = ?, updated_at = ? WHERE config_key = ?", [stringVal, updatedAt, key]);
+        } else {
+          await db.executePrepared("INSERT INTO site_settings (config_key, config_value, created_at) VALUES (?, ?, ?)", [key, stringVal, updatedAt]);
+        }
+      }
+    }
+
+    // Synchronize legacy keys for backwards-compatibility
+    const legacySyncMap: Record<string, string> = {
+      site_name: 'store_name',
+      site_name_bn: 'store_name_bn',
+      primary_logo: 'store_logo',
+      favicon: 'store_favicon',
+      brand_description: 'store_description',
+      brand_description_bn: 'store_description_bn'
+    };
+
+    for (const [brandingKey, legacyKey] of Object.entries(legacySyncMap)) {
+      if (data[brandingKey] !== undefined) {
+        const stringVal = String(data[brandingKey] ?? '');
+        const rows = await db.executePrepared("SELECT id FROM site_settings WHERE config_key = ? LIMIT 1", [legacyKey]);
+        if (rows.length > 0) {
+          await db.executePrepared("UPDATE site_settings SET config_value = ?, updated_at = ? WHERE config_key = ?", [stringVal, updatedAt, legacyKey]);
+        } else {
+          await db.executePrepared("INSERT INTO site_settings (config_key, config_value, created_at) VALUES (?, ?, ?)", [legacyKey, stringVal, updatedAt]);
+        }
+      }
+    }
+
+    // Also sync footer logo and company logo if primary_logo is changed
+    if (data.primary_logo !== undefined) {
+      const pLogo = String(data.primary_logo || '');
+      for (const legKey of ['company_logo', 'footer_logo_url']) {
+        const rows = await db.executePrepared("SELECT id FROM site_settings WHERE config_key = ? LIMIT 1", [legKey]);
+        if (rows.length > 0) {
+          await db.executePrepared("UPDATE site_settings SET config_value = ?, updated_at = ? WHERE config_key = ?", [pLogo, updatedAt, legKey]);
+        } else {
+          await db.executePrepared("INSERT INTO site_settings (config_key, config_value, created_at) VALUES (?, ?, ?)", [legKey, pLogo, updatedAt]);
+        }
+      }
+    }
+
+    res.json({ success: true, message: 'Branding settings saved successfully.' });
+  } catch (err) {
+    console.error('[Save Branding Error] ', err);
+    res.status(500).json({ error: 'Failed to save branding settings.' });
+  }
+});
+
+// POST Admin Upload Brand Asset
+const brandingUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit
+});
+
+app.post('/api/admin/branding/upload-asset', requireAdminAuth, brandingUpload.single('file'), async (req: any, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json(errorResponse('No asset file uploaded.'));
+    }
+
+    const assetType = req.body.asset_type || 'brand_asset';
+    const originalExt = path.extname(req.file.originalname).toLowerCase();
+    const isSvg = req.file.mimetype === 'image/svg+xml' || originalExt === '.svg';
+    const isIco = req.file.mimetype === 'image/x-icon' || originalExt === '.ico';
+
+    const uploadDir = path.join(process.cwd(), 'public', 'uploads', 'branding');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
+    let filename: string;
+    let relativePath: string;
+    const absolutePath = (name: string) => path.join(uploadDir, name);
+
+    if (isSvg) {
+      filename = `${assetType}_${Date.now()}.svg`;
+      fs.writeFileSync(absolutePath(filename), req.file.buffer);
+      relativePath = `/uploads/branding/${filename}`;
+    } else if (isIco) {
+      filename = `${assetType}_${Date.now()}.ico`;
+      fs.writeFileSync(absolutePath(filename), req.file.buffer);
+      relativePath = `/uploads/branding/${filename}`;
+    } else {
+      filename = `${assetType}_${Date.now()}.webp`;
+      await sharp(req.file.buffer)
+        .resize(800, 800, { fit: 'inside', withoutEnlargement: true })
+        .webp({ quality: 92 })
+        .toFile(absolutePath(filename));
+      relativePath = `/uploads/branding/${filename}`;
+    }
+
+    res.json(successResponse({ url: relativePath }, 'Asset uploaded successfully.'));
+  } catch (err: any) {
+    console.error('[Admin Brand Asset Upload Error] ', err);
+    res.status(500).json(errorResponse('Failed to upload asset: ' + err.message));
+  }
+});
+
 
 // Helper to get site settings with defaults
 const getSiteSettings = async () => {
@@ -3175,7 +3376,7 @@ app.post('/api/admin/seo-settings/:page_key', requireAdminAuth, async (req, res)
   }
 });
 
-// ----------------- LANGUAGE & TRANSLATION API (SHAD GHOR) -----------------
+// ----------------- LANGUAGE & TRANSLATION API (SHAD SHODAI) -----------------
 
 // Helper to get language config
 const getLanguageConfig = async () => {
@@ -3330,7 +3531,7 @@ app.get('/api/languages/translations', async (req, res) => {
   }
 });
 
-// ----------------- NOTIFICATION API & SERVICE (SHAD GHOR) -----------------
+// ----------------- NOTIFICATION API & SERVICE (SHAD SHODAI) -----------------
 
 // Notification Service Helper MOVED to src/services/notificationService.ts
 
@@ -3447,7 +3648,7 @@ app.get('/api/admin/notifications', requireAdminAuth, async (req, res) => {
   }
 });
 
-// ----------------- SECURITY & AUDIT API (SHAD GHOR) -----------------
+// ----------------- SECURITY & AUDIT API (SHAD SHODAI) -----------------
 
 // Audit Logger Helper
 const AuditLogger = {
@@ -3586,7 +3787,7 @@ app.get('/api/admin/security/audit-logs', requireAdminAuth, async (req, res) => 
   }
 });
 
-// ----------------- CUSTOMER AUTH & SECURITY API (SHAD GHOR) -----------------
+// ----------------- CUSTOMER AUTH & SECURITY API (SHAD SHODAI) -----------------
 
 // Customer Registration
 app.post('/api/customer/register', async (req, res) => {
@@ -3830,7 +4031,7 @@ app.post('/api/customer/messages', requireCustomerAuth, async (req: any, res) =>
   }
 });
 
-// ----------------- REVIEWS API (SHAD GHOR) -----------------
+// ----------------- REVIEWS API (SHAD SHODAI) -----------------
 
 // Public: Get reviews for a product
 app.get('/api/customer/reviews/:productId', async (req, res) => {
@@ -5452,7 +5653,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[Shad Ghor Server] Ready and listening on port ${PORT}`);
+    console.log(`[SHAD SHODAI Server] Ready and listening on port ${PORT}`);
   });
 }
 

@@ -122,3 +122,80 @@ export interface PaymentMethod {
   status: number;
   sort_order: number;
 }
+
+export interface TaglineConfig {
+  enabled: boolean;
+  text: string;
+  text_bn?: string;
+  link?: string;
+  link_target?: '_self' | '_blank';
+  align?: 'left' | 'center' | 'right';
+  show_desktop?: boolean;
+  show_mobile?: boolean;
+  bg_color?: string;
+  text_color?: string;
+}
+
+export interface BrandingData {
+  // Website Identity
+  site_name: string;
+  site_name_bn: string;
+  short_name: string;
+  tagline: string;
+  tagline_bn: string;
+  business_type: string;
+  brand_keywords: string;
+  brand_description: string;
+  brand_description_bn: string;
+  copyright_text: string;
+  copyright_text_bn: string;
+
+  // Tagline Configuration
+  tagline_enabled: boolean;
+  tagline_text: string;
+  tagline_text_bn: string;
+  tagline_link: string;
+  tagline_link_target: '_self' | '_blank';
+  tagline_align: 'left' | 'center' | 'right';
+  tagline_show_desktop: boolean;
+  tagline_show_mobile: boolean;
+  tagline_bg_color: string;
+  tagline_text_color: string;
+
+  // Canonical Brand Assets (Primary Logo is canonical source of truth)
+  primary_logo: string;
+  compact_logo: string;
+  favicon: string;
+  social_image: string;
+  loading_logo: string;
+  admin_logo: string;
+  footer_logo: string;
+
+  // Brand Colors
+  primary_color: string;
+  secondary_color: string;
+  accent_color: string;
+  text_color: string;
+  bg_color: string;
+
+  // SEO & Social
+  seo_title: string;
+  seo_description: string;
+  seo_keywords: string;
+  og_title: string;
+  og_description: string;
+  og_image: string;
+  twitter_card: string;
+  canonical_url: string;
+
+  // Contact / Business Identity
+  store_phone: string;
+  store_whatsapp: string;
+  store_email: string;
+  store_address: string;
+  store_city: string;
+  store_district: string;
+  store_country: string;
+  support_hours: string;
+  website_url: string;
+}

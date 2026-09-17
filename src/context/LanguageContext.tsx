@@ -33,12 +33,12 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('shadghor_lang');
+    const saved = localStorage.getItem('shadshodai_lang') || localStorage.getItem('shadghor_lang');
     return (saved === 'en' || saved === 'bn') ? saved : 'en';
   });
 
   const [translations, setTranslations] = useState<Record<string, string>>(() => {
-    const saved = localStorage.getItem('shadghor_lang');
+    const saved = localStorage.getItem('shadshodai_lang') || localStorage.getItem('shadghor_lang');
     const initialLang: Language = (saved === 'en' || saved === 'bn') ? saved : 'en';
     return (TRANSLATIONS[initialLang] || TRANSLATIONS.en) as Record<string, string>;
   });
@@ -92,7 +92,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         setConfig(newConfig);
 
         // If current language is disabled, switch to default or enabled one
-        const currentSaved = localStorage.getItem('shadghor_lang');
+        const currentSaved = localStorage.getItem('shadshodai_lang') || localStorage.getItem('shadghor_lang');
         let activeLang: Language = (currentSaved === 'en' || currentSaved === 'bn') ? (currentSaved as Language) : newConfig.default_lang;
 
         if (activeLang === 'en' && !newConfig.en_enabled) activeLang = 'bn';
@@ -100,7 +100,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         
         if (activeLang !== language) {
           setLanguage(activeLang);
-          localStorage.setItem('shadghor_lang', activeLang);
+          localStorage.setItem('shadshodai_lang', activeLang);
         }
       }
     } catch (err) {
@@ -121,9 +121,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const changeLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('shadghor_lang', lang);
+    localStorage.setItem('shadshodai_lang', lang);
     
     // Dispatch a custom event so other components can react instantly
+    window.dispatchEvent(new Event('shadshodai_language_change'));
     window.dispatchEvent(new Event('shadghor_language_change'));
   };
 

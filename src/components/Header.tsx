@@ -730,7 +730,7 @@ export const Header = () => {
       <NotificationCenter 
         isOpen={isNotificationsOpen} 
         onClose={() => setIsNotificationsOpen(false)} 
-        customerId={localStorage.getItem('shadghor_customer_id')} 
+        customerId={localStorage.getItem('shadshodai_customer_id') || localStorage.getItem('shadghor_customer_id')} 
         onUnreadChange={setUnreadNotifications}
       />
     </>

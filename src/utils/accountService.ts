@@ -28,7 +28,8 @@ export interface Order {
   transactionReference?: string;
 }
 
-const ORDERS_KEY = 'shadghor_orders_secure_2026';
+const ORDERS_KEY = 'shadshodai_orders_secure_2026';
+const LEGACY_ORDERS_KEY = 'shadghor_orders_secure_2026';
 
 export const accountService = {
   async getLoggedInUser(): Promise<Customer | null> {
@@ -114,9 +115,10 @@ export const accountService = {
 
   createOrder(customerId: number, productsSummary: string, totalAmount: number, paymentMethod?: string, paymentStatus?: string, transactionReference?: string): Order {
     try {
-      const allOrders: Order[] = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+      const stored = localStorage.getItem(ORDERS_KEY) || localStorage.getItem(LEGACY_ORDERS_KEY) || '[]';
+      const allOrders: Order[] = JSON.parse(stored);
       const newOrder: Order = {
-        id: `SG-${Math.floor(100000 + Math.random() * 900000)}`,
+        id: `SS-${Math.floor(100000 + Math.random() * 900000)}`,
         customerId,
         date: new Date().toISOString(),
         products: productsSummary,

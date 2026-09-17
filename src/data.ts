@@ -3,7 +3,7 @@ import { Product, Category, Banner } from './types';
 export const BANNERS: Banner[] = [
   { 
     id: '1', 
-    title: "প্রাকৃতিক মধু এখন SHAD GHOR-এ", 
+    title: "প্রাকৃতিক মধু এখন SHAD SHODAI-এ", 
     description: "১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু সরাসরি আপনার টেবিলে।",
     imageUrl: "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=1200&h=500&fit=crop", 
     buttonText: "সংগ্রহ করুন",
@@ -34,7 +34,7 @@ export const BANNERS: Banner[] = [
   { 
     id: '4', 
     title: "দেশি ও প্রাকৃতিক খাবার সরাসরি ঘরে", 
-    description: "আপনার বিশ্বস্ত শপ SHAD GHOR থেকে সেরা পণ্যটি বেছে নিন।",
+    description: "আপনার বিশ্বস্ত শপ SHAD SHODAI থেকে সেরা পণ্যটি বেছে নিন।",
     imageUrl: "https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=1200&h=500&fit=crop", 
     buttonText: "মেনু দেখুন",
     buttonLink: "/shop",

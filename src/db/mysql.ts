@@ -154,8 +154,6 @@ export interface DBBrand {
   officialWebsite?: string;
   status: 'active' | 'inactive' | 'draft';
   featured: boolean;
-  display_order?: number;
-  product_count?: number;
   seoTitle?: string;
   metaDescription?: string;
   seoKeywords?: string;
@@ -406,207 +404,15 @@ INITIAL_ADMIN_PERMISSIONS.forEach(p => {
   }
 });
 
-const INITIAL_CUSTOMERS: DBCustomer[] = [
-  { id: 1, full_name: "Arif Rahman", email: "arif@gmail.com", phone: "01711223344", status: "active", created_at: "2026-09-02T10:00:00.000Z" },
-  { id: 2, full_name: "Nabila Karim", email: "nabila@yahoo.com", phone: "01811223344", status: "active", created_at: "2026-09-03T11:30:00.000Z" },
-  { id: 3, full_name: "Kazi Arif", email: "arif@outlook.com", phone: "01911223344", status: "inactive", created_at: "2026-09-05T09:15:00.000Z" },
-  { id: 4, full_name: "Sharmin Akter", email: "sharmin@gmail.com", phone: "01511223344", status: "active", created_at: "2026-09-07T02:00:00.000Z" },
-  { id: 5, full_name: "Md. Yousuf", email: "yousuf@gmail.com", phone: "01611223344", status: "active", created_at: "2026-09-07T03:10:00.000Z" }
-];
+const INITIAL_CUSTOMERS: DBCustomer[] = [];
 
-const INITIAL_PRODUCTS: DBProduct[] = [
-  { id: 'h1', name: 'Premium Organic Honey (সুন্দরবনের খলিসা ফুলের মধু)', price: 950, old_price: 1100, image_url: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&h=500&fit=crop', category: 'মধু', rating: 4.9, badge: 'Premium', stock_quantity: 45, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-01T10:00:00.000Z', is_fast_sale: 1, slug: 'premium-sundarban-honey', unit: '500g', description: '১০০% খাঁটি সুন্দরবনের খলিসা ফুলের মধু। কোনো প্রকার কেমিক্যাল বা প্রিজারভেটিভ মুক্ত।', short_description: '১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু।', view_count: 1250, review_count: 45 },
-  { id: 'og1', name: 'Cold Pressed Mustard Oil (কাঠের ঘানিতে ভাঙা সরিষার তেল)', price: 420, old_price: 480, image_url: 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=500&h=500&fit=crop', category: 'তেল ও ঘি', rating: 4.8, badge: 'Pure', stock_quantity: 60, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-03T09:30:00.000Z', is_fast_sale: 1, slug: 'mustard-oil-1l', unit: '1L', description: 'কাঠের ঘানিতে ভাঙা খাঁটি সরিষার তেল। ঝাঁঝালো স্বাদ ও প্রাকৃতিক ঘ্রাণযুক্ত।', short_description: 'কাঠের ঘানিতে ভাঙা ১০০% খাঁটি সরিষার তেল।', view_count: 850, review_count: 32 },
-  { id: 'og2', name: 'Premium Cow Ghee (ঘাস খাওয়া গরুর দুধের খাঁটি ঘি)', price: 1250, old_price: 1400, image_url: 'https://images.unsplash.com/photo-1622484211148-197a70f2a4b1?w=500&h=500&fit=crop', category: 'তেল ও ঘি', rating: 5.0, badge: 'Best Seller', stock_quantity: 25, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-04T15:00:00.000Z', is_fast_sale: 1, slug: 'premium-cow-ghee', unit: '500g', description: 'ঘাস খাওয়া গরুর দুধ থেকে প্রস্তুতকৃত দানাদার ও সুগন্ধি ঘি।', short_description: 'সুগন্ধি ও দানাদার খাঁটি গাওয়া ঘি।', view_count: 2100, review_count: 89 },
-  { id: 'd1', name: 'Ajwa Dates Premium (মদিনার অরিজিনাল আজওয়া খেজুর)', price: 950, old_price: 1200, image_url: 'https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=500&h=500&fit=crop', category: 'খেজুর', rating: 4.9, badge: 'Fresh', stock_quantity: 40, brand: 'Madinah Premium', status: 'active', created_at: '2026-09-05T10:45:00.000Z', is_fast_sale: 1, slug: 'ajwa-dates-premium', unit: '500g', description: 'মদিনা থেকে আমদানিকৃত প্রিমিয়াম কোয়ালিটির আজওয়া খেজুর। নরম ও মিষ্টি স্বাদের।', short_description: 'মদিনার অরিজিনাল প্রিমিয়াম আজওয়া খেজুর।', view_count: 1560, review_count: 67 },
-  { id: 'h2', name: 'Black Cumin Honey (কালিজিরা ফুলের মধু)', price: 850, old_price: 950, image_url: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=500&h=500&fit=crop', category: 'মধু', rating: 4.8, badge: 'Medicinal', stock_quantity: 30, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-01T11:00:00.000Z', is_fast_sale: 0, slug: 'black-cumin-honey', unit: '500g', description: 'কালিজিরা ফুলের নির্যাস থেকে সংগৃহীত অত্যন্ত পুষ্টিকর ও ঔষধি গুণসম্পন্ন মধু।', short_description: 'কালিজিরা ফুলের শক্তিশালী ঔষধি গুণসম্পন্ন মধু।', view_count: 920, review_count: 28 },
-  { id: 's2', name: 'Premium Turmeric Powder (নিরাপদ হলুদ গুঁড়া)', price: 180, old_price: 220, image_url: 'https://images.unsplash.com/photo-1615485240314-10c4fd77aa6b?w=500&h=500&fit=crop', category: 'মসলা', rating: 4.7, badge: 'Organic', stock_quantity: 100, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-08T10:00:00.000Z', is_fast_sale: 0, slug: 'turmeric-powder-200g', unit: '200g', description: 'নিজস্ব তত্ত্বাবধানে বাছাইকৃত হলুদ থেকে প্রস্তুতকৃত ফ্রেশ ও নিরাপদ গুঁড়া।', short_description: 'কেমিক্যাল মুক্ত অরিজিনাল হলুদ গুঁড়া।', view_count: 540, review_count: 15 },
-  { id: 's1', name: 'Red Chili Powder (ঝাল মরিচ গুঁড়া)', price: 160, old_price: 200, image_url: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=500&h=500&fit=crop', category: 'মসলা', rating: 4.8, badge: 'Spicy', stock_quantity: 80, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-08T11:00:00.000Z', is_fast_sale: 0, slug: 'chili-powder-200g', unit: '200g', description: 'সেরা মানের মরিচ থেকে তৈরি করা কড়া ঝাল ও সুন্দর রঙের মরিচ গুঁড়া।', short_description: 'সেরা মানের মরিচ থেকে তৈরি কড়া ঝাল মরিচ গুঁড়া।', view_count: 480, review_count: 12 },
-  { id: 'n2', name: 'Cashew Nuts Roasted (রোস্টেড কাজু বাদাম)', price: 650, old_price: 750, image_url: 'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=500&h=500&fit=crop', category: 'বাদাম ও বীজ', rating: 4.9, badge: 'Crunchy', stock_quantity: 35, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-06T13:00:00.000Z', is_fast_sale: 1, slug: 'roasted-cashew-nuts', unit: '250g', description: 'মচমচে এবং সুস্বাদু প্রিমিয়াম কোয়ালিটির রোস্টেড কাজু বাদাম।', short_description: 'প্রিমিয়াম কোয়ালিটির সুস্বাদু রোস্টেড কাজু বাদাম।', view_count: 1100, review_count: 42 },
-  { id: 'n1', name: 'Chia Seeds Premium (সুপারফুড চিয়া সিড)', price: 380, old_price: 450, image_url: 'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=500&h=500&fit=crop', category: 'বাদাম ও বীজ', rating: 4.8, badge: 'Superfood', stock_quantity: 50, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-09T13:00:00.000Z', is_fast_sale: 0, slug: 'premium-chia-seeds', unit: '250g', description: 'ওমেগা-৩ ও ফাইবারে ভরপুর প্রিমিয়াম গ্রেড মেক্সিকান চিয়া সিড।', short_description: 'উচ্চ পুষ্টিমান সম্পন্ন অরিজিনাল চিয়া সিড।', view_count: 780, review_count: 23 },
-  { id: 'gr3', name: 'Himalayan Pink Salt (লবণ)', price: 160, old_price: 200, image_url: 'https://images.unsplash.com/photo-1615485240314-10c4fd77aa6b?w=500&h=500&fit=crop', category: 'মুদি ও অন্যান্য', rating: 4.9, badge: 'Natural', stock_quantity: 150, brand: 'Shad Ghor', status: 'active', created_at: '2026-09-10T12:00:00.000Z', is_fast_sale: 0, slug: 'pink-salt-1kg', unit: '1kg', description: 'প্রাকৃতিক খনিজ সমৃদ্ধ ১০০% খাঁটি হিমালয়ান পিংক সল্ট। স্বাস্থ্যের জন্য অত্যন্ত উপকারী।', short_description: 'প্রাকৃতিক খনিজ সমৃদ্ধ খাঁটি পিংক সল্ট।', view_count: 650, review_count: 18 }
-];
+const INITIAL_PRODUCTS: DBProduct[] = [];
 
-const DEMO_CATEGORY_BANNERS = [
-  { name: 'Pure Honey Banner', img_d: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1200&h=300&fit=crop', img_m: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&h=400&fit=crop', head_en: '100% Pure Honey', head_bn: '১০০% খাঁটি মধু', link: '#/products?category=honey' },
-  { name: 'Organic Oil Banner', img_d: 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=1200&h=300&fit=crop', img_m: 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=600&h=400&fit=crop', head_en: 'Authentic Cold Pressed Oil', head_bn: 'খাঁটি কোল্ড প্রেসড অয়েল', link: '#/products?category=oil-ghee' },
-  { name: 'Premium Dates Banner', img_d: 'https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=1200&h=300&fit=crop', img_m: 'https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=600&h=400&fit=crop', head_en: 'Saudi Premium Dates', head_bn: 'সৌদি প্রিমিয়াম খেজুর', link: '#/products?category=dates' },
-  { name: 'Organic Grains Banner', img_d: 'https://images.unsplash.com/photo-1586201327693-86619addc25b?w=1200&h=300&fit=crop', img_m: 'https://images.unsplash.com/photo-1586201327693-86619addc25b?w=600&h=400&fit=crop', head_en: 'Organic Rice & Grains', head_bn: 'অর্গানিক চাল ও খাদ্যশস্য', link: '#/products?category=rice-grains' }
-];
+const DEMO_CATEGORY_BANNERS: any[] = [];
 
-const INITIAL_CATEGORIES: DBCategory[] = [
-  { 
-    id: '1', 
-    name: 'Honey', 
-    name_bn: 'মধু', 
-    slug: 'honey', 
-    image_url: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 1,
-    is_featured: 1,
-    show_on_homepage: 1,
-    seo_title: 'Pure Organic Honey - Shad Ghor',
-    seo_description: 'Buy 100% pure organic honey online from Shad Ghor.'
-  },
-  { 
-    id: '2', 
-    name: 'Oil & Ghee', 
-    name_bn: 'তেল ও ঘি', 
-    slug: 'oil-ghee', 
-    image_url: 'https://images.unsplash.com/photo-1622484211148-197a70f2a4b1?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 2,
-    is_featured: 1,
-    show_on_homepage: 1,
-    seo_title: 'Natural Ghee & Cold Pressed Oils - Shad Ghor'
-  },
-  { 
-    id: '3', 
-    name: 'Dates', 
-    name_bn: 'খেজুর', 
-    slug: 'dates', 
-    image_url: 'https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 3,
-    is_featured: 1,
-    show_on_homepage: 1
-  },
-  { 
-    id: '4', 
-    name: 'Spices', 
-    name_bn: 'মসলা', 
-    slug: 'spices', 
-    image_url: 'https://images.unsplash.com/photo-1615485240314-10c4fd77aa6b?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 4,
-    is_featured: 1,
-    show_on_homepage: 1
-  },
-  { 
-    id: '5', 
-    name: 'Nuts & Seeds', 
-    name_bn: 'বাদাম ও বীজ', 
-    slug: 'nuts-seeds', 
-    image_url: 'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 5,
-    is_featured: 1,
-    show_on_homepage: 1
-  },
-  { 
-    id: '6', 
-    name: 'Rice & Grains', 
-    name_bn: 'চাল ও খাদ্যশস্য', 
-    slug: 'rice-grains', 
-    image_url: 'https://images.unsplash.com/photo-1586201327693-86619addc25b?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 6,
-    is_featured: 1,
-    show_on_homepage: 1
-  },
-  { 
-    id: '7', 
-    name: 'Grocery & Others', 
-    name_bn: 'মুদি ও অন্যান্য', 
-    slug: 'grocery-others', 
-    image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=300&fit=crop', 
-    status: 'active', 
-    sort_order: 7,
-    is_featured: 1,
-    show_on_homepage: 1
-  }
-];
+const INITIAL_CATEGORIES: DBCategory[] = [];
 
-const INITIAL_BRANDS: DBBrand[] = [
-  {
-    id: 'brand_1',
-    name: 'Shad Ghor',
-    localName: 'শাদ ঘর',
-    slug: 'shad-ghor',
-    logo: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=150&h=150&fit=crop',
-    banner: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=300&fit=crop',
-    shortDescription: '100% Pure & Organic Honey, Ghee and Food Items',
-    description: 'Shad Ghor brings you authentic organic food directly from the heart of rural producers in Bangladesh.',
-    countryOfOrigin: 'Bangladesh',
-    officialWebsite: 'https://shadghor.com',
-    status: 'active',
-    featured: true,
-    display_order: 1,
-    seoTitle: 'Shad Ghor - Pure & Organic Products',
-    metaDescription: 'Shop pure and organic honey, ghee, and natural food items from Shad Ghor.',
-    seoKeywords: 'shad ghor, organic honey, pure ghee, bangladesh',
-    canonicalUrl: 'https://shadghor.com/brands/shad-ghor',
-    logoAlt: 'Shad Ghor Logo',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  {
-    id: 'brand_2',
-    name: 'Organic Ghor',
-    localName: 'অর্গানিক ঘর',
-    slug: 'organic-ghor',
-    logo: 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=150&h=150&fit=crop',
-    banner: 'https://images.unsplash.com/photo-1474979266404-7ea9bcd8203c?w=800&h=300&fit=crop',
-    shortDescription: 'Pure mustard oil and natural spices',
-    description: 'Organic Ghor specializes in cold-pressed oils and chemical-free spices.',
-    countryOfOrigin: 'Bangladesh',
-    officialWebsite: 'https://organicghor.com',
-    display_order: 2,
-    status: 'active',
-    featured: true,
-    seoTitle: 'Organic Ghor - Pure Oils & Spices',
-    metaDescription: 'Buy cold pressed mustard oil and pure spices from Organic Ghor.',
-    seoKeywords: 'organic ghor, mustard oil, spices',
-    canonicalUrl: 'https://shadghor.com/brands/organic-ghor',
-    logoAlt: 'Organic Ghor Logo',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  {
-    id: 'brand_3',
-    name: 'Madinah Premium',
-    localName: 'মদিনা প্রিমিয়াম',
-    slug: 'madinah-premium',
-    logo: 'https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=150&h=150&fit=crop',
-    banner: 'https://images.unsplash.com/photo-1627972230090-3b0271a3952f?w=800&h=300&fit=crop',
-    shortDescription: 'Directly imported Ajwa and Medjool dates',
-    description: 'Premium date selection imported directly from Saudi Arabia.',
-    countryOfOrigin: 'Saudi Arabia',
-    officialWebsite: 'https://madinahdates.com',
-    display_order: 3,
-    status: 'active',
-    featured: false,
-    seoTitle: 'Madinah Premium Dates',
-    metaDescription: 'Authentic Ajwa and Medjool dates from Saudi Arabia.',
-    seoKeywords: 'ajwa dates, medjool, dates',
-    canonicalUrl: 'https://shadghor.com/brands/madinah-premium',
-    logoAlt: 'Madinah Premium Logo',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  {
-    id: 'brand_4',
-    name: 'PAIDAGOR',
-    localName: 'পায়দাগোর',
-    slug: 'paidagor',
-    logo: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=150&h=150&fit=crop',
-    banner: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=300&fit=crop',
-    shortDescription: 'Fresh farm-sourced groceries, dry nuts and essentials',
-    description: 'PAIDAGOR specializes in authentic farm-fresh essentials, premium nuts, and organic seeds.',
-    countryOfOrigin: 'Bangladesh',
-    officialWebsite: 'https://paidagor.com',
-    display_order: 4,
-    status: 'active',
-    featured: true,
-    seoTitle: 'PAIDAGOR - Premium Groceries & Nuts',
-    metaDescription: 'Shop premium organic groceries, dry fruits and daily food items from PAIDAGOR.',
-    seoKeywords: 'paidagor, organic food, nuts, dry fruits, grocery',
-    canonicalUrl: 'https://shadghor.com/brands/paidagor',
-    logoAlt: 'PAIDAGOR Logo',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  }
-];
+const INITIAL_BRANDS: DBBrand[] = [];
 
 const INITIAL_PAYMENT_METHODS: DBPaymentMethod[] = [
   { id: 1, name: 'Visa', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg', alt_text: 'Visa', status: 1, sort_order: 1 },
@@ -617,50 +423,9 @@ const INITIAL_PAYMENT_METHODS: DBPaymentMethod[] = [
   { id: 6, name: 'Rocket', logo: 'https://seeklogo.com/images/R/rocket-logo-9173099981-seeklogo.com.png', alt_text: 'Rocket', status: 1, sort_order: 6 }
 ];
 
-const INITIAL_ORDERS: DBOrder[] = [
-  { 
-    id: "SG-90812", customer_name: "Arif Rahman", customer_email: "arif@gmail.com", customer_phone: "01711223344",
-    total_amount: 1450, subtotal: 1370, delivery_charge: 80, 
-    status: "Delivered", payment_method: "cod", payment_status: "successful",
-    created_at: "2026-09-02T14:30:00.000Z" 
-  },
-  { 
-    id: "SG-91544", customer_name: "Nabila Karim", customer_email: "nabila@yahoo.com", customer_phone: "01822334455",
-    total_amount: 2100, subtotal: 2020, delivery_charge: 80, 
-    status: "Processing", payment_method: "bkash", payment_status: "successful",
-    created_at: "2026-09-05T16:15:00.000Z" 
-  },
-  { 
-    id: "SG-91602", customer_name: "Arif Rahman", customer_email: "arif@gmail.com", customer_phone: "01711223344",
-    total_amount: 850, subtotal: 790, delivery_charge: 60, 
-    status: "Pending", payment_method: "cod", payment_status: "pending",
-    created_at: "2026-09-07T01:15:00.000Z" 
-  },
-  { 
-    id: "SG-91615", customer_name: "Sharmin Akter", customer_email: "sharmin@gmail.com", customer_phone: "01933445566",
-    total_amount: 1200, subtotal: 1120, delivery_charge: 80, 
-    status: "Pending", payment_method: "nagad", payment_status: "pending",
-    created_at: "2026-09-07T02:05:00.000Z" 
-  },
-  { 
-    id: "SG-91620", customer_name: "Md. Yousuf", customer_email: "yousuf@gmail.com", customer_phone: "01644556677",
-    total_amount: 980, subtotal: 920, delivery_charge: 60, 
-    status: "Shipped", payment_method: "cod", payment_status: "pending",
-    created_at: "2026-09-06T11:45:00.000Z" 
-  }
-];
+const INITIAL_ORDERS: DBOrder[] = [];
 
-const INITIAL_ORDER_ITEMS: DBOrderItem[] = [
-  { id: 1, order_id: "SG-90812", product_id: "h1", product_name: "Sundarban Natural Honey", quantity: 1, price: 650 },
-  { id: 2, order_id: "SG-90812", product_id: "og2", product_name: "Premium Pure Ghee", quantity: 1, price: 800 },
-  { id: 3, order_id: "SG-91544", product_id: "d1", product_name: "Ajwa Dates Premium", quantity: 2, price: 750 },
-  { id: 4, order_id: "SG-91544", product_id: "n1", product_name: "Premium Mixed Nuts", quantity: 1, price: 600 },
-  { id: 5, order_id: "SG-91602", product_id: "og2", product_name: "Premium Pure Ghee", quantity: 1, price: 850 },
-  { id: 6, order_id: "SG-91615", product_id: "d1", product_name: "Ajwa Dates Premium", quantity: 1, price: 750 },
-  { id: 7, order_id: "SG-91615", product_id: "n1", product_name: "Premium Mixed Nuts", quantity: 1, price: 450 },
-  { id: 8, order_id: "SG-91620", product_id: "n1", product_name: "Premium Mixed Nuts", quantity: 1, price: 900 },
-  { id: 9, order_id: "SG-91620", product_id: "v1", product_name: "Organic Red Tomato", quantity: 1, price: 80 }
-];
+const INITIAL_ORDER_ITEMS: DBOrderItem[] = [];
 
 class DatabaseManager {
   private pool: Pool | null = null;
@@ -760,8 +525,8 @@ class DatabaseManager {
       }
       if (!existingData.site_settings) {
         existingData.site_settings = [
-          { id: 1, config_key: "store_name", config_value: "SHAD GHOR" },
-          { id: 2, config_key: "store_email", config_value: "info@shadghor.com" },
+          { id: 1, config_key: "store_name", config_value: "SHAD SHODAI" },
+          { id: 2, config_key: "store_email", config_value: "info@shadshodai.com" },
           { id: 3, config_key: "backup_auto_enabled", config_value: "true" },
           { id: 4, config_key: "backup_frequency", config_value: "Daily" },
           { id: 5, config_key: "backup_retention_count", config_value: "10" },
@@ -774,14 +539,14 @@ class DatabaseManager {
 
       // Ensure all footer settings are present
       const footerDefaults: Record<string, string> = {
-        'footer_logo_url': 'https://api.dicebear.com/7.x/initials/svg?seed=SG&backgroundColor=059669',
-        'footer_description_en': 'SHAD GHOR brings you authentic organic food directly from the heart of rural producers in Bangladesh.',
-        'footer_description_bn': 'স্বাদ ঘর সরাসরি বাংলাদেশের গ্রাম পর্যায়ের উৎপাদকদের কাছ থেকে খাঁটি এবং অর্গানিক খাবার আপনার কাছে পৌঁছে দেয়।',
+        'footer_logo_url': 'https://api.dicebear.com/7.x/initials/svg?seed=SS&backgroundColor=059669',
+        'footer_description_en': 'SHAD SHODAI brings you authentic organic food directly from the heart of rural producers in Bangladesh.',
+        'footer_description_bn': 'স্বাদ সদাই সরাসরি বাংলাদেশের গ্রাম পর্যায়ের উৎপাদকদের কাছ থেকে খাঁটি এবং অর্গানিক খাবার আপনার কাছে পৌঁছে দেয়।',
         'footer_contact_phone': '01700-000000',
-        'footer_contact_email': 'info@shadghor.com',
+        'footer_contact_email': 'info@shadshodai.com',
         'footer_contact_address_en': 'Dhaka, Bangladesh',
         'footer_contact_address_bn': 'ঢাকা, বাংলাদেশ',
-        'footer_social_facebook': 'https://facebook.com/shadghor',
+        'footer_social_facebook': 'https://facebook.com/shadshodai',
         'footer_social_twitter': '',
         'footer_social_instagram': '',
         'footer_social_youtube': '',
@@ -789,8 +554,8 @@ class DatabaseManager {
         'footer_app_store_url': '',
         'footer_play_store_url': '',
         'footer_payment_methods_json': '[]',
-        'footer_copyright_en': '© 2026 SHAD GHOR. All Rights Reserved.',
-        'footer_copyright_bn': '© ২০২৬ স্বাদ ঘর। সর্বস্বত্ব সংরক্ষিত।'
+        'footer_copyright_en': '© 2026 SHAD SHODAI. All Rights Reserved.',
+        'footer_copyright_bn': '© ২০২৬ স্বাদ সদাই। সর্বস্বত্ব সংরক্ষিত।'
       };
 
       Object.entries(footerDefaults).forEach(([key, value]) => {
@@ -912,7 +677,7 @@ class DatabaseManager {
           { id: 1, column_id: 1, name_en: "About us", name_bn: "আমাদের সম্পর্কে", url: "/#/about", sort_order: 1, status: "active" },
           { id: 2, column_id: 1, name_en: "Contact us", name_bn: "যোগাযোগ", url: "/#/contact", sort_order: 2, status: "active" },
           { id: 3, column_id: 1, name_en: "Company Information", name_bn: "কোম্পানি তথ্য", url: "/#/policy/company-info", sort_order: 3, status: "active" },
-          { id: 4, column_id: 1, name_en: "SHAD GHOR Stories", name_bn: "স্বাদ ঘর স্টোরিজ", url: "/#/stories", sort_order: 4, status: "active" },
+          { id: 4, column_id: 1, name_en: "SHAD SHODAI Stories", name_bn: "স্বাদ সদাই স্টোরিজ", url: "/#/stories", sort_order: 4, status: "active" },
           { id: 5, column_id: 1, name_en: "Terms & Conditions", name_bn: "শর্তাবলী", url: "/#/policy/terms", sort_order: 5, status: "active" },
           { id: 6, column_id: 1, name_en: "Privacy Policy", name_bn: "গোপনীয়তা নীতি", url: "/#/policy/privacy", sort_order: 6, status: "active" },
           { id: 7, column_id: 1, name_en: "Careers", name_bn: "ক্যারিয়ার", url: "/#/careers", sort_order: 7, status: "active" },
@@ -960,93 +725,40 @@ class DatabaseManager {
         categories: INITIAL_CATEGORIES,
         orders: INITIAL_ORDERS,
         order_items: INITIAL_ORDER_ITEMS,
-        customer_conversations: [
-          { id: 1, customer_id: 1, customer_name: "Arif Rahman", customer_email: "arif@gmail.com", status: 'open', last_message: "আমি আমার অর্ডারের আপডেট জানতে চাই।", last_message_at: "2026-09-07T10:00:00.000Z", unread_count: 1, created_at: "2026-09-07T10:00:00.000Z", updated_at: "2026-09-07T10:00:00.000Z" }
-        ],
-        customer_messages: [
-          { id: 1, conversation_id: 1, sender_id: 1, sender_type: 'customer', message_text: "আসসালামু আলাইকুম, আমি আমার অর্ডারের আপডেট জানতে চাই।", is_read: false, created_at: "2026-09-07T10:00:00.000Z" }
-        ],
-        support_tickets: [
-          {
-            id: 1,
-            ticket_id: "SG-T-1001",
-            customer_id: 1,
-            customer_name: "Arif Rahman",
-            customer_email: "arif@gmail.com",
-            customer_phone: "01711223344",
-            subject: "অর্ডার বিলম্ব (Order Delay)",
-            category: "Order Issue",
-            description: "আমার অর্ডারটি এখনো হাতে পাইনি। দয়া করে আপডেট দিন।",
-            priority: "normal",
-            status: "open",
-            assigned_staff_id: null,
-            assigned_staff_name: null,
-            related_order_id: "SG-90812",
-            created_at: "2026-09-07T10:00:00.000Z",
-            updated_at: "2026-09-07T10:00:00.000Z"
-          }
-        ],
-        ticket_replies: [
-          {
-            id: 1,
-            ticket_id: 1,
-            sender_id: 1,
-            sender_type: "customer",
-            sender_name: "Arif Rahman",
-            message_text: "আমার অর্ডারটি এখনো হাতে পাইনি। দয়া করে আপডেট দিন।",
-            created_at: "2026-09-07T10:00:00.000Z"
-          }
-        ],
+        customer_conversations: [],
+        customer_messages: [],
+        support_tickets: [],
+        ticket_replies: [],
         coupons: [],
-        product_reviews: [
-          {
-            id: 1,
-            customer_id: 1,
-            customer_name: "Arif Rahman",
-            customer_avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Felix",
-            product_id: "h1",
-            product_name: "Sundarban Natural Honey (সুন্দরবন প্রাকৃতিক মধু)",
-            product_image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop",
-            order_id: "SG-90812",
-            rating: 5,
-            title: "Excellent Honey!",
-            comment: "This honey is absolutely pure and delicious. Highly recommended!",
-            images: JSON.stringify(["https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop"]),
-            status: "approved",
-            report_status: "none",
-            is_verified_purchase: true,
-            created_at: "2026-09-07T11:00:00.000Z",
-            updated_at: "2026-09-07T11:00:00.000Z"
-          }
-        ],
+        product_reviews: [],
         review_reports: [],
         payments: [],
         payment_methods: INITIAL_PAYMENT_METHODS,
         site_settings: [
-          { id: 1, config_key: "store_name", config_value: "SHAD GHOR" },
-          { id: 2, config_key: "store_email", config_value: "info@shadghor.com" },
+          { id: 1, config_key: "store_name", config_value: "SHAD SHODAI" },
+          { id: 2, config_key: "store_email", config_value: "info@shadshodai.com" },
           { id: 3, config_key: "backup_auto_enabled", config_value: "true" },
           { id: 4, config_key: "backup_frequency", config_value: "Daily" },
           { id: 5, config_key: "backup_retention_count", config_value: "10" },
           { id: 6, config_key: "last_database_backup", config_value: "Never" },
           { id: 7, config_key: "last_database_backup_status", config_value: "N/A" },
-          { id: 8, config_key: "footer_logo_url", config_value: "https://shadghor.com/wp-content/uploads/2023/11/Shad-Ghor-Logo-01.png" },
+          { id: 8, config_key: "footer_logo_url", config_value: "https://shadshodai.com/wp-content/uploads/2023/11/Shad-Ghor-Logo-01.png" },
           { id: 9, config_key: "footer_description_en", config_value: "Your trusted online grocery store. Fresh products, better health, happier life." },
           { id: 10, config_key: "footer_description_bn", config_value: "আপনার বিশ্বস্ত অনলাইন মুদি দোকান। তাজা পণ্য, উন্নত স্বাস্থ্য, সুখী জীবন।" },
           { id: 11, config_key: "footer_contact_phone", config_value: "+8809642922922" },
-          { id: 12, config_key: "footer_contact_email", config_value: "contact@shadghor.com" },
+          { id: 12, config_key: "footer_contact_email", config_value: "contact@shadshodai.com" },
           { id: 13, config_key: "footer_contact_address_en", config_value: "Rampura, Dhaka, Bangladesh" },
           { id: 14, config_key: "footer_contact_address_bn", config_value: "রামপুরা, ঢাকা, বাংলাদেশ" },
-          { id: 15, config_key: "footer_social_facebook", config_value: "https://facebook.com/shadghor" },
-          { id: 16, config_key: "footer_social_youtube", config_value: "https://youtube.com/shadghor" },
-          { id: 17, config_key: "footer_social_instagram", config_value: "https://instagram.com/shadghor" },
-          { id: 18, config_key: "footer_social_tiktok", config_value: "https://tiktok.com/@shadghor" },
-          { id: 19, config_key: "footer_social_linkedin", config_value: "https://linkedin.com/company/shadghor" },
-          { id: 20, config_key: "footer_play_store_url", config_value: "https://play.google.com/store/apps/details?id=com.shadghor.app" },
-          { id: 21, config_key: "footer_app_store_url", config_value: "https://apps.apple.com/app/shadghor/id123456789" },
-          { id: 22, config_key: "footer_copyright_en", config_value: "© 2026 SHAD GHOR. All rights reserved." },
-          { id: 23, config_key: "footer_copyright_bn", config_value: "© ২০২৬ স্বাদ ঘর। সর্বস্বত্ব সংরক্ষিত।" },
-          { id: 15, config_key: "footer_social_facebook", config_value: "https://facebook.com/shadghor" },
+          { id: 15, config_key: "footer_social_facebook", config_value: "https://facebook.com/shadshodai" },
+          { id: 16, config_key: "footer_social_youtube", config_value: "https://youtube.com/shadshodai" },
+          { id: 17, config_key: "footer_social_instagram", config_value: "https://instagram.com/shadshodai" },
+          { id: 18, config_key: "footer_social_tiktok", config_value: "https://tiktok.com/@shadshodai" },
+          { id: 19, config_key: "footer_social_linkedin", config_value: "https://linkedin.com/company/shadshodai" },
+          { id: 20, config_key: "footer_play_store_url", config_value: "https://play.google.com/store/apps/details?id=com.shadshodai.app" },
+          { id: 21, config_key: "footer_app_store_url", config_value: "https://apps.apple.com/app/shadshodai/id123456789" },
+          { id: 22, config_key: "footer_copyright_en", config_value: "© 2026 SHAD SHODAI. All rights reserved." },
+          { id: 23, config_key: "footer_copyright_bn", config_value: "© ২০২৬ স্বাদ সদাই। সর্বস্বত্ব সংরক্ষিত।" },
+          { id: 15, config_key: "footer_social_facebook", config_value: "https://facebook.com/shadshodai" },
           { id: 16, config_key: "footer_social_twitter", config_value: "" },
           { id: 17, config_key: "footer_social_instagram", config_value: "" },
           { id: 18, config_key: "footer_social_youtube", config_value: "" },
@@ -1054,8 +766,8 @@ class DatabaseManager {
           { id: 20, config_key: "footer_app_store_url", config_value: "" },
           { id: 21, config_key: "footer_play_store_url", config_value: "" },
           { id: 22, config_key: "footer_payment_methods_json", config_value: "[]" },
-          { id: 23, config_key: "footer_copyright_en", config_value: "© 2026 SHAD GHOR. All Rights Reserved." },
-          { id: 24, config_key: "footer_copyright_bn", config_value: "© ২০২৬ স্বাদ ঘর। সর্বস্বত্ব সংরক্ষিত।" }
+          { id: 23, config_key: "footer_copyright_en", config_value: "© 2026 SHAD SHODAI. All Rights Reserved." },
+          { id: 24, config_key: "footer_copyright_bn", config_value: "© ২০২৬ স্বাদ সদাই। সর্বস্বত্ব সংরক্ষিত।" }
         ],
         footer_columns: [
           { id: 1, name_en: "Information", name_bn: "তথ্য", sort_order: 1, status: "active" },
@@ -1081,11 +793,11 @@ class DatabaseManager {
           {
             id: 1,
             page_key: "home",
-            meta_title: "SHAD GHOR — Premium Organic Food Shop",
+            meta_title: "SHAD SHODAI — Premium Organic Food Shop",
             meta_description: "১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।",
             seo_slug: "",
-            canonical_url: "https://shadghor.com",
-            open_graph_image: "https://shadghor.com/og-image.jpg",
+            canonical_url: "https://shadshodai.com",
+            open_graph_image: "https://shadshodai.com/og-image.jpg",
             structured_data: "{}"
           }
         ],
@@ -1096,8 +808,8 @@ class DatabaseManager {
             name: 'Hero Banner - Fresh Products', 
             image_url_desktop: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1920&h=700', 
             image_url_mobile: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1080&h=1350', 
-            heading_en: 'SHAD GHOR — Fresh Products, Trusted Quality', 
-            heading_bn: 'স্বাদ ঘর — সতেজ পণ্য, বিশ্বস্ত মান', 
+            heading_en: 'SHAD SHODAI — Fresh Products, Trusted Quality', 
+            heading_bn: 'স্বাদ সদাই — সতেজ পণ্য, বিশ্বস্ত মান', 
             description_en: 'Premium organic food delivered to your doorstep. Pure honey, oil, ghee and more.', 
             description_bn: 'আপনার দোরগোড়ায় প্রিমিয়াম অর্গানিক খাবার। খাঁটি মধু, তেল, ঘি এবং আরও অনেক কিছু।', 
             alt_en: 'Fresh Organic Products Banner', 
@@ -1238,8 +950,8 @@ class DatabaseManager {
             name: 'Login Banner', 
             image_url_desktop: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=1920&h=600', 
             image_url_mobile: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=1080&h=1200', 
-            heading_en: 'Welcome to SHAD GHOR', 
-            heading_bn: 'স্বাদ ঘর-এ আপনাকে স্বাগতম', 
+            heading_en: 'Welcome to SHAD SHODAI', 
+            heading_bn: 'স্বাদ সদাই-এ আপনাকে স্বাগতম', 
             description_en: 'Login to continue shopping and enjoy your account benefits.', 
             description_bn: 'কেনাকাটা চালিয়ে যেতে লগইন করুন এবং আপনার অ্যাকাউন্টের সুবিধাগুলি উপভোগ করুন।', 
             display_location: 'auth_banner', 
@@ -1594,39 +1306,6 @@ class DatabaseManager {
           INDEX \`idx_cat_sort\` (\`sort_order\`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
       `);
-
-      // 4.5. Brands
-      await connection.execute(`
-        CREATE TABLE IF NOT EXISTS \`brands\` (
-          \`id\` VARCHAR(50) PRIMARY KEY,
-          \`name\` VARCHAR(150) NOT NULL,
-          \`localName\` VARCHAR(150) NULL,
-          \`slug\` VARCHAR(150) NOT NULL UNIQUE,
-          \`logo\` VARCHAR(500) NULL,
-          \`banner\` VARCHAR(500) NULL,
-          \`shortDescription\` TEXT NULL,
-          \`description\` TEXT NULL,
-          \`countryOfOrigin\` VARCHAR(100) NULL,
-          \`officialWebsite\` VARCHAR(255) NULL,
-          \`display_order\` INT DEFAULT 0,
-          \`status\` ENUM('active', 'inactive') DEFAULT 'active',
-          \`featured\` TINYINT(1) DEFAULT 0,
-          \`seoTitle\` VARCHAR(255) NULL,
-          \`metaDescription\` TEXT NULL,
-          \`seoKeywords\` TEXT NULL,
-          \`canonicalUrl\` VARCHAR(255) NULL,
-          \`logoAlt\` VARCHAR(255) NULL,
-          \`createdAt\` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-          \`updatedAt\` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-          INDEX \`idx_brand_status\` (\`status\`),
-          INDEX \`idx_brand_slug\` (\`slug\`),
-          INDEX \`idx_brand_order\` (\`display_order\`)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-      `);
-
-      try {
-        await connection.execute("ALTER TABLE `products` ADD COLUMN `brand_id` VARCHAR(50) NULL");
-      } catch (e) {}
 
       // 5. Orders
       await connection.execute(`
@@ -2237,7 +1916,7 @@ class DatabaseManager {
         await connection.execute(`
           INSERT INTO \`seo_settings\` (page_key, meta_title, meta_description, seo_slug, canonical_url, open_graph_image, structured_data)
           VALUES (?, ?, ?, ?, ?, ?, ?)
-        `, ["home", "SHAD GHOR — Premium Organic Food Shop", "১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।", "", "https://shadghor.com", "https://shadghor.com/og-image.jpg", "{}"]);
+        `, ["home", "SHAD SHODAI — Premium Organic Food Shop", "১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।", "", "https://shadshodai.com", "https://shadshodai.com/og-image.jpg", "{}"]);
       }
 
       // 15. Homepage Banners
@@ -2320,7 +1999,7 @@ class DatabaseManager {
       if (existingAbout[0].count === 0) {
         await connection.execute(
           "INSERT INTO about_us (content_en, content_bn) VALUES (?, ?)",
-          ["Welcome to Shad Ghor. We provide high-quality products.", "শাদ ঘরে স্বাগতম। আমরা উচ্চ মানের পণ্য সরবরাহ করি।"]
+          ["Welcome to SHAD SHODAI. We provide high-quality products.", "স্বাদ সদাই-এ স্বাগতম। আমরা উচ্চ মানের পণ্য সরবরাহ করি।"]
         );
       }
 
@@ -2642,27 +2321,22 @@ class DatabaseManager {
         let list = [...(data.brands || [])];
         list = list.map((b: any) => {
           const prodCount = (data.products || []).filter((p: any) => 
-            (p.brand_id && p.brand_id === b.id) ||
-            (p.brand && (
-              p.brand.toLowerCase() === b.name.toLowerCase() || 
-              p.brand.toLowerCase() === b.slug.toLowerCase() ||
-              p.brand === b.id
-            ))
+            p.brand && (p.brand.toLowerCase() === b.name.toLowerCase() || p.brand.toLowerCase() === b.slug.toLowerCase())
           ).length;
           return { ...b, product_count: prodCount };
         });
 
-        if (sqlLower.includes('count(*) as count') || sqlLower.includes('count(*) as total')) {
+        if (sqlLower.includes('count(*) as count')) {
           if (sqlLower.includes("status = 'active'")) {
-            return [{ count: list.filter((b: any) => b.status === 'active').length, total: list.filter((b: any) => b.status === 'active').length }];
+            return [{ count: list.filter((b: any) => b.status === 'active').length }];
           }
           if (sqlLower.includes('featured = 1')) {
-            return [{ count: list.filter((b: any) => b.featured).length, total: list.filter((b: any) => b.featured).length }];
+            return [{ count: list.filter((b: any) => b.featured).length }];
           }
           if (sqlLower.includes("status = 'inactive'")) {
-            return [{ count: list.filter((b: any) => b.status === 'inactive').length, total: list.filter((b: any) => b.status === 'inactive').length }];
+            return [{ count: list.filter((b: any) => b.status === 'inactive').length }];
           }
-          return [{ count: list.length, total: list.length }];
+          return [{ count: list.length }];
         }
 
         if (sqlLower.includes('id = ?')) {
@@ -2673,7 +2347,7 @@ class DatabaseManager {
 
         if (sqlLower.includes('slug = ?')) {
           const slug = params[0];
-          const found = list.find((b: any) => b.slug === slug || b.id === slug);
+          const found = list.find((b: any) => b.slug === slug);
           return found ? [found] : [];
         }
 
@@ -2681,12 +2355,7 @@ class DatabaseManager {
           list = list.filter((b: any) => b.status === 'active');
         }
 
-        list.sort((a, b) => {
-          const orderA = a.display_order !== undefined && a.display_order !== null ? Number(a.display_order) : 999;
-          const orderB = b.display_order !== undefined && b.display_order !== null ? Number(b.display_order) : 999;
-          if (orderA !== orderB) return orderA - orderB;
-          return new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
-        });
+        list.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
         return list;
       }
 
@@ -2702,14 +2371,13 @@ class DatabaseManager {
           description: params[7] || '',
           countryOfOrigin: params[8] || '',
           officialWebsite: params[9] || '',
-          display_order: params[10] !== undefined ? Number(params[10]) : 0,
-          status: params[11] || 'active',
-          featured: params[12] ? Boolean(params[12]) : false,
-          seoTitle: params[13] || '',
-          metaDescription: params[14] || '',
-          seoKeywords: params[15] || '',
-          canonicalUrl: params[16] || '',
-          logoAlt: params[17] || '',
+          status: params[10] || 'active',
+          featured: params[11] ? Boolean(params[11]) : false,
+          seoTitle: params[12] || '',
+          metaDescription: params[13] || '',
+          seoKeywords: params[14] || '',
+          canonicalUrl: params[15] || '',
+          logoAlt: params[16] || '',
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         };
@@ -2721,53 +2389,32 @@ class DatabaseManager {
       if (sqlLower.startsWith('update')) {
         const id = params[params.length - 1];
         let found = false;
-
-        if (sqlLower.includes('set status = ? where id = ?') || sqlLower.includes('set `status` = ? where `id` = ?')) {
-          data.brands = (data.brands || []).map((b: any) => {
-            if (b.id === id) {
-              found = true;
-              return { ...b, status: params[0], updatedAt: new Date().toISOString() };
-            }
-            return b;
-          });
-        } else if (sqlLower.includes('set featured = ? where id = ?')) {
-          data.brands = (data.brands || []).map((b: any) => {
-            if (b.id === id) {
-              found = true;
-              return { ...b, featured: Boolean(params[0]), updatedAt: new Date().toISOString() };
-            }
-            return b;
-          });
-        } else {
-          data.brands = (data.brands || []).map((b: any) => {
-            if (b.id === id) {
-              found = true;
-              return {
-                ...b,
-                name: params[0] !== undefined ? params[0] : b.name,
-                localName: params[1] !== undefined ? params[1] : b.localName,
-                slug: params[2] !== undefined ? params[2] : b.slug,
-                logo: params[3] !== undefined ? params[3] : b.logo,
-                banner: params[4] !== undefined ? params[4] : b.banner,
-                shortDescription: params[5] !== undefined ? params[5] : b.shortDescription,
-                description: params[6] !== undefined ? params[6] : b.description,
-                countryOfOrigin: params[7] !== undefined ? params[7] : b.countryOfOrigin,
-                officialWebsite: params[8] !== undefined ? params[8] : b.officialWebsite,
-                display_order: params[9] !== undefined ? Number(params[9]) : (b.display_order || 0),
-                status: params[10] !== undefined ? params[10] : b.status,
-                featured: params[11] !== undefined ? Boolean(params[11]) : b.featured,
-                seoTitle: params[12] !== undefined ? params[12] : b.seoTitle,
-                metaDescription: params[13] !== undefined ? params[13] : b.metaDescription,
-                seoKeywords: params[14] !== undefined ? params[14] : b.seoKeywords,
-                canonicalUrl: params[15] !== undefined ? params[15] : b.canonicalUrl,
-                logoAlt: params[16] !== undefined ? params[16] : b.logoAlt,
-                updatedAt: new Date().toISOString()
-              };
-            }
-            return b;
-          });
-        }
-
+        data.brands = (data.brands || []).map((b: any) => {
+          if (b.id === id) {
+            found = true;
+            return {
+              ...b,
+              name: params[0] !== undefined ? params[0] : b.name,
+              localName: params[1] !== undefined ? params[1] : b.localName,
+              slug: params[2] !== undefined ? params[2] : b.slug,
+              logo: params[3] !== undefined ? params[3] : b.logo,
+              banner: params[4] !== undefined ? params[4] : b.banner,
+              shortDescription: params[5] !== undefined ? params[5] : b.shortDescription,
+              description: params[6] !== undefined ? params[6] : b.description,
+              countryOfOrigin: params[7] !== undefined ? params[7] : b.countryOfOrigin,
+              officialWebsite: params[8] !== undefined ? params[8] : b.officialWebsite,
+              status: params[9] !== undefined ? params[9] : b.status,
+              featured: params[10] !== undefined ? Boolean(params[10]) : b.featured,
+              seoTitle: params[11] !== undefined ? params[11] : b.seoTitle,
+              metaDescription: params[12] !== undefined ? params[12] : b.metaDescription,
+              seoKeywords: params[13] !== undefined ? params[13] : b.seoKeywords,
+              canonicalUrl: params[14] !== undefined ? params[14] : b.canonicalUrl,
+              logoAlt: params[15] !== undefined ? params[15] : b.logoAlt,
+              updatedAt: new Date().toISOString()
+            };
+          }
+          return b;
+        });
         if (found) this.saveLocalData(data);
         return { affectedRows: found ? 1 : 0 };
       }

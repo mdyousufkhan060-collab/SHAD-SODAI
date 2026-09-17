@@ -85,12 +85,12 @@ const DEFAULT_SETTINGS: GeneralSettings = {
   min_order_amount: '0',
   order_confirmation: 'manual',
   order_cancellation: 'allowed',
-  seo_title: 'SHAD GHOR — Premium Organic Food Shop',
+  seo_title: 'SHAD SHODAI — Premium Organic Food Shop',
   seo_description: '১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।',
   seo_keywords: 'organic food, honey, ghee, dates, nuts, seeds, bangladesh',
-  canonical_url: 'https://shadghor.com',
+  canonical_url: 'https://shadshodai.com',
   robots_setting: 'index, follow',
-  og_title: 'SHAD GHOR — Premium Organic Food Shop',
+  og_title: 'SHAD SHODAI — Premium Organic Food Shop',
   og_description: '১০০% খাঁটি ও প্রাকৃতিক সুন্দরবনের মধু, ঘি, মসলা এবং অর্গানিক খাবার।',
   og_image: ''
 };

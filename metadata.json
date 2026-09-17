@@ -1,6 +1,6 @@
 {
-  "name": "SHAD GHOR",
-  "description": "বিশুদ্ধ খাবার, সরাসরি আপনার ঘরে",
+  "name": "SHAD SHODAI",
+  "description": "SHAD SHODAI — Premium Dry Food & Natural Food Products",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

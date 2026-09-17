@@ -44,7 +44,8 @@ import {
   Map,
   BadgePercent,
   HelpCircle,
-  Zap
+  Zap,
+  Sparkles
 } from 'lucide-react';
 import { adminService } from '../utils/adminService';
 import { useLanguage } from '../context/LanguageContext';
@@ -93,6 +94,8 @@ import AdminCategoryBanners from './AdminCategoryBanners';
 import AdminAuthBanners from './AdminAuthBanners';
 import AdminPromoBanners from './AdminPromoBanners';
 import AdminBannerEditor from './AdminBannerEditor';
+import { AdminBranding } from './AdminBranding';
+import { useBranding } from '../context/BrandingContext';
 
 interface AdminDashboardProps {
   onLogout: () => void;
@@ -117,6 +120,7 @@ interface NavItem {
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   const { language, changeLanguage } = useLanguage();
+  const { branding, getLogo } = useBranding();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [bannerViewMode, setBannerViewMode] = useState<'list' | 'edit'>('list');
   const [editingBanner, setEditingBanner] = useState<any>(null);
@@ -490,6 +494,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       icon: Settings, 
       path: '#/admin/settings',
       subItems: [
+        { id: 'settings-branding', labelEn: 'Branding & Identity', labelBn: 'ব্র্যান্ডিং ও আইডেন্টিটি', icon: Sparkles, path: '#/admin/settings/branding' },
         { id: 'settings-general', labelEn: 'General Settings', labelBn: 'সাধারণ সেটিংস', icon: Settings, path: '#/admin/settings/general' },
         { id: 'settings-store', labelEn: 'Store Information', labelBn: 'স্টোর তথ্য', icon: FileText, path: '#/admin/settings/store' },
         { id: 'settings-seo', labelEn: 'SEO Settings', labelBn: 'এসইও সেটিংস', icon: Globe, path: '#/admin/settings/seo' },
@@ -573,12 +578,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
           {/* Core Brand Header details */}
           <div className="flex items-center gap-2 cursor-pointer animate-fade-in" onClick={() => navigateTo('#/admin/dashboard', 'dashboard')} id="admin-brand-logo-panel">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100/50">
-              <Leaf className="w-4.5 h-4.5 fill-emerald-600/10 text-emerald-600" />
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100/50 overflow-hidden">
+              {getLogo('admin') ? (
+                <img 
+                  src={getLogo('admin')!} 
+                  alt={branding.site_name || 'Brand Logo'} 
+                  className="w-full h-full object-contain p-0.5" 
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <Leaf className="w-4.5 h-4.5 fill-emerald-600/10 text-emerald-600" />
+              )}
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-black text-xs tracking-widest text-emerald-800 leading-none font-sans">
-                SHAD GHOR
+              <span className="font-black text-xs tracking-widest text-emerald-800 leading-none font-sans uppercase">
+                {branding.site_name || 'SHAD SHODAI'}
               </span>
               <span className="text-[8px] font-black text-gray-400 tracking-wider uppercase mt-1">
                 {language === 'bn' ? 'অ্যাডমিন প্যানেল' : 'ADMIN PANEL'}
@@ -654,7 +670,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-150 rounded-xl shadow-lg py-1.5 z-50 animate-fade-in text-left" id="admin-profile-dropdown">
                 <div className="px-3.5 py-1.5 border-b border-gray-50">
                   <p className="text-xs font-black text-gray-700">{sessionUser?.name || 'Admin'}</p>
-                  <p className="text-[9px] text-gray-400 font-bold truncate mt-0.5">{sessionUser?.email || 'admin@shadghor.com'}</p>
+                  <p className="text-[9px] text-gray-400 font-bold truncate mt-0.5">{sessionUser?.email || 'admin@shadshodai.com'}</p>
                 </div>
                 <button
                   onClick={handleLogout}
@@ -755,7 +771,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             <div className="p-3 border-t border-gray-150 bg-gray-50/50" id="admin-sidebar-controls-lower">
               {!isSidebarCollapsed ? (
                 <div className="text-[9px] text-gray-400 font-extrabold" id="admin-sidebar-build-info">
-                  <p className="text-gray-500 font-black">SHAD GHOR CONTROL v2.0</p>
+                  <p className="text-gray-500 font-black">{branding.site_name || 'SHAD SHODAI'} CONTROL v2.0</p>
                   <p className="font-bold text-emerald-700 mt-0.5">MySQL Server Active</p>
                 </div>
               ) : (
@@ -814,7 +830,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                       {language === 'bn' ? 'স্বাগতম, সুপার অ্যাডমিনিস্ট্রেটর!' : 'Welcome back, Super Administrator!'}
                     </h2>
                     <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase">
-                      {language === 'bn' ? 'আজকের ব্যবসার ড্যাশবোর্ড ও রিয়েল-টাইম ওভারভিউ' : 'E-commerce Management Dashboard — SHAD GHOR'}
+                      {language === 'bn' ? 'আজকের ব্যবসার ড্যাশবোর্ড ও রিয়েল-টাইম ওভারভিউ' : `E-commerce Management Dashboard — ${branding.site_name || 'SHAD SHODAI'}`}
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs font-bold text-gray-500 bg-white border border-gray-150 px-2.5 py-1 rounded-lg shadow-4xs">
@@ -1349,6 +1365,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             <AdminGoogleAnalytics language={language} />
           ) : activeTab === 'tracking-website' ? (
             <AdminWebsiteTracking language={language} />
+          ) : activeTab === 'settings-branding' || activeTab === 'branding' || activeTab === 'identity' ? (
+            <AdminBranding />
           ) : activeTab === 'settings-general' ? (
             <AdminGeneralSettings language={language} />
           ) : activeTab === 'settings-store' ? (
@@ -1568,9 +1586,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             {/* Drawer Brand Header */}
             <div className="flex items-center justify-between pb-3.5 border-b border-gray-150" id="admin-mobile-drawer-header">
               <div className="flex items-center gap-2">
-                <Leaf className="w-5 h-5 text-emerald-600" />
-                <span className="font-black text-xs tracking-wider text-emerald-800">
-                  SHAD GHOR ADMIN
+                {getLogo('admin') ? (
+                  <img src={getLogo('admin')!} alt={branding.site_name} className="w-5 h-5 object-contain" />
+                ) : (
+                  <Leaf className="w-5 h-5 text-emerald-600" />
+                )}
+                <span className="font-black text-xs tracking-wider text-emerald-800 uppercase">
+                  {branding.site_name || 'SHAD SHODAI'} ADMIN
                 </span>
               </div>
               <button 
@@ -1662,7 +1684,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                   {sessionUser?.name || 'Super Administrator'}
                 </span>
                 <span className="text-[10px] text-gray-400 font-bold mt-1">
-                  {sessionUser?.email || 'superadmin@shadghor.com'}
+                  {sessionUser?.email || 'superadmin@shadshodai.com'}
                 </span>
               </div>
             </div>

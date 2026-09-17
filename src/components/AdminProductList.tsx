@@ -527,14 +527,6 @@ export const AdminProductList: React.FC<AdminProductListProps> = ({ language, na
                         <span>{prod.status}</span>
                       </button>
 
-                      {prod.brand && (
-                        <>
-                          <span className="text-gray-300">•</span>
-                          <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">
-                            {prod.brand}
-                          </span>
-                        </>
-                      )}
                       {prod.category && (
                         <span className="hidden lg:inline text-[11px] text-gray-400 font-normal">
                           ({prod.category})

@@ -102,7 +102,7 @@ export const HeroSlider: React.FC = () => {
     })
   };
 
-  if (isLoading || banners.length === 0) {
+  if (isLoading) {
     return (
       <div className="px-2.5 sm:px-3 pt-0.5 pb-2 bg-white max-w-7xl mx-auto w-full">
         <div 
@@ -111,6 +111,10 @@ export const HeroSlider: React.FC = () => {
         />
       </div>
     );
+  }
+
+  if (banners.length === 0) {
+    return null;
   }
 
   const activeBanner = banners[index];

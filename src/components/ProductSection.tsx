@@ -78,11 +78,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
         </section>
       );
     }
-    return (
-        <section className="px-4 py-8 text-center text-gray-500 text-sm">
-            {language === 'bn' ? 'কোন পণ্য উপলব্ধ নেই।' : 'No products available yet.'}
-        </section>
-    );
+    return null;
   }
 
   const handleViewAll = () => {

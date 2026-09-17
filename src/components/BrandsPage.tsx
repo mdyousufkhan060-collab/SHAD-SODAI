@@ -14,8 +14,7 @@ export const BrandsPage = () => {
         const res = await fetch('/api/brands');
         if (res.ok) {
           const data = await res.json();
-          const list = Array.isArray(data) ? data : (data.brands || []);
-          setBrands(list.filter((b: any) => b.status === 'active'));
+          setBrands(data.filter((b: any) => b.status === 'active'));
         }
       } catch (err) {
         console.error('Failed to fetch brands:', err);
@@ -61,9 +60,9 @@ export const BrandsPage = () => {
               href={`#/brand/${brand.slug}`}
               className="group bg-white rounded-2xl border border-gray-100 p-6 flex flex-col items-center text-center transition-all hover:shadow-xl hover:shadow-emerald-600/5 hover:border-emerald-100"
             >
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-50 p-2 mb-4 overflow-hidden border border-gray-50 group-hover:scale-105 transition-transform flex items-center justify-center">
-                {(brand.logo || brand.logoUrl) ? (
-                  <img src={brand.logo || brand.logoUrl} alt={brand.name} className="w-full h-full object-contain" />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-50 p-2 mb-4 overflow-hidden border border-gray-50 group-hover:scale-105 transition-transform">
+                {brand.logoUrl ? (
+                  <img src={brand.logoUrl} alt={brand.name} className="w-full h-full object-contain" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-emerald-50 text-emerald-600 font-black text-xl">
                     {brand.name.substring(0, 1)}

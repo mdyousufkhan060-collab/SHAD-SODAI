@@ -537,7 +537,7 @@ export const AccountPage = ({ onBackToHome }: AccountPageProps) => {
                   <input
                     type="email"
                     required
-                    placeholder="hello@shadghor.com"
+                    placeholder="hello@shadshodai.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 text-xs text-gray-800 placeholder-gray-400 font-medium focus:outline-none"
@@ -764,7 +764,7 @@ export const AccountPage = ({ onBackToHome }: AccountPageProps) => {
                   <input
                     type="email"
                     required
-                    placeholder="hello@shadghor.com"
+                    placeholder="hello@shadshodai.com"
                     value={regEmail}
                     onChange={(e) => setRegEmail(e.target.value)}
                     className="flex-1 text-xs text-gray-800 placeholder-gray-400 font-medium focus:outline-none"
@@ -1415,7 +1415,7 @@ export const AccountPage = ({ onBackToHome }: AccountPageProps) => {
                     <p className="text-[11px] text-gray-500 font-bold mb-3">{t('supportSub')}</p>
                     <div className="flex flex-wrap gap-4 text-xs font-black">
                       <span className="text-gray-700">📞 {t('callUs')}: +880 1712-345678</span>
-                      <span className="text-gray-700">✉️ {t('emailUs')}: support@shadghor.com</span>
+                      <span className="text-gray-700">✉️ {t('emailUs')}: support@shadshodai.com</span>
                     </div>
                   </div>
 

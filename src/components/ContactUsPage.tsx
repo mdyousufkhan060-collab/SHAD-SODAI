@@ -5,7 +5,7 @@ import { supportService, ContactConfig } from '../utils/supportService';
 
 export const ContactUsPage = () => {
   const { language, t } = useLanguage();
-  const [contactInfo, setContactInfo] = useState<ContactConfig>({ phone: '+8801712345678', whatsapp: '+8801712345678', email: 'support@shadghor.com' });
+  const [contactInfo, setContactInfo] = useState<ContactConfig>({ phone: '+8801712345678', whatsapp: '+8801712345678', email: 'support@shadshodai.com' });
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 

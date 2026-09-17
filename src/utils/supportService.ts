@@ -174,8 +174,8 @@ export const FAQ_ITEMS: FAQItem[] = [
     category_id: 7,
     question_en: 'Are your products 100% organic?',
     question_bn: 'আপনাদের পণ্যগুলো কি ১০০% অর্গানিক?',
-    answer_en: 'Yes! All Shad Ghor foods are sourced directly from trusted farmers and certified producers. We ensure premium grade, 100% preservative-free, chemical-free raw quality.',
-    answer_bn: 'হ্যাঁ! স্বাদ ঘরের প্রতিটি পণ্য সরাসরি বিশ্বস্ত খামারি এবং প্রত্যয়িত উৎপাদকদের কাছ থেকে সংগ্রহ করা হয়। আমরা শতভাগ প্রিজারভেটিভমুক্ত ও কেমিক্যালমুক্ত খাঁটি মান নিশ্চিত করি।',
+    answer_en: 'Yes! All SHAD SHODAI foods are sourced directly from trusted farmers and certified producers. We ensure premium grade, 100% preservative-free, chemical-free raw quality.',
+    answer_bn: 'হ্যাঁ! স্বাদ সদাইয়ের প্রতিটি পণ্য সরাসরি বিশ্বস্ত খামারি এবং প্রত্যয়িত উৎপাদকদের কাছ থেকে সংগ্রহ করা হয়। আমরা শতভাগ প্রিজারভেটিভমুক্ত ও কেমিক্যালমুক্ত খাঁটি মান নিশ্চিত করি।',
     sort_order: 1
   }
 ];
@@ -186,7 +186,7 @@ export const initSupportDB = () => {
     const defaultConfig: ContactConfig = {
       phone: '+8801712345678',
       whatsapp: '+8801712345678',
-      email: 'support@shadghor.com'
+      email: 'support@shadshodai.com'
     };
     localStorage.setItem(CONTACT_KEY, JSON.stringify(defaultConfig));
   }
@@ -262,7 +262,7 @@ export const supportService = {
       if (!res.ok) throw new Error('Failed to fetch contact settings');
       return await res.json();
     } catch {
-      return { phone: '+8801712345678', whatsapp: '+8801712345678', email: 'support@shadghor.com' };
+      return { phone: '+8801712345678', whatsapp: '+8801712345678', email: 'support@shadshodai.com' };
     }
   },
 

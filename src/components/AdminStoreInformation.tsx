@@ -64,8 +64,8 @@ interface StoreInformation {
 }
 
 const DEFAULT_INFO: StoreInformation = {
-  store_name: 'SHAD GHOR',
-  store_name_bn: 'স্বাদ ঘর',
+  store_name: 'SHAD SHODAI',
+  store_name_bn: 'স্বাদ সদাই',
   store_logo: '',
   store_favicon: '',
   store_description: 'Pure and Organic Food Shop in Bangladesh.',
@@ -80,7 +80,7 @@ const DEFAULT_INFO: StoreInformation = {
   store_district: 'Dhaka',
   store_country: 'Bangladesh',
   store_post_code: '',
-  company_name: 'SHAD GHOR ENTERPRISE',
+  company_name: 'SHAD SHODAI ENTERPRISE',
   registration_number: '',
   vat_tin: '',
   maps_url: '',
