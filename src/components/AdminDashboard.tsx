@@ -95,6 +95,7 @@ import AdminAuthBanners from './AdminAuthBanners';
 import AdminPromoBanners from './AdminPromoBanners';
 import AdminBannerEditor from './AdminBannerEditor';
 import { AdminBranding } from './AdminBranding';
+import { AdminAiApiSettings } from './AdminAiApiSettings';
 import { useBranding } from '../context/BrandingContext';
 
 interface AdminDashboardProps {
@@ -502,7 +503,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
         { id: 'settings-notifications', labelEn: 'Notification Settings', labelBn: 'বিজ্ঞপ্তি সেটিংস', icon: Bell, path: '#/admin/settings/notifications' },
         { id: 'settings-security', labelEn: 'Security Settings', labelBn: 'নিরাপত্তা সেটিংস', icon: Lock, path: '#/admin/settings/security' },
         { id: 'settings-roles', labelEn: 'Admin Users / Roles', labelBn: 'অ্যাডমিন রোলস', icon: Users, path: '#/admin/settings/roles' },
-        { id: 'settings-backup', labelEn: 'Database / Backup', labelBn: 'ডাটাবেস ব্যাকআপ', icon: Database, path: '#/admin/settings/backup' }
+        { id: 'settings-backup', labelEn: 'Database / Backup', labelBn: 'ডাটাবেস ব্যাকআপ', icon: Database, path: '#/admin/settings/backup' },
+        { id: 'settings-ai-api', labelEn: 'AI & API Settings', labelBn: 'AI এবং API সেটিংস', icon: Zap, path: '#/admin/settings/ai-api' }
       ]
     },
     {
@@ -1385,6 +1387,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             <AdminRolesModule language={language} />
           ) : activeTab === 'settings-backup' ? (
             <AdminDatabaseBackup language={language} />
+          ) : activeTab === 'settings-ai-api' ? (
+            <AdminAiApiSettings />
           ) : activeTab === 'support-messages' ? (
             <AdminCustomerMessages />
           ) : activeTab === 'support-tickets' ? (

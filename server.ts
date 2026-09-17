@@ -2101,6 +2101,87 @@ app.post('/api/admin/site-settings', requireAdminAuth, async (req, res) => {
   }
 });
 
+// ADMIN: TEST API Connections
+app.post('/api/admin/test-api/:service', requireAdminAuth, async (req, res) => {
+  const { service } = req.params;
+  const config = req.body;
+
+  try {
+    switch (service) {
+      case 'gemini': {
+        const { GoogleGenAI } = await import('@google/genai');
+        const ai = new GoogleGenAI({ apiKey: config.apiKey });
+        const result = await ai.models.generateContent({
+          model: config.model || 'gemini-1.5-flash',
+          contents: [{ role: 'user', parts: [{ text: "Hello, respond with 'Success' if you are working." }] }]
+        });
+        const text = (result as any).candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text && (text.includes('Success') || text.length > 0)) {
+          return res.json({ success: true, message: 'Gemini AI connection successful!' });
+        }
+        throw new Error('Unexpected response from Gemini');
+      }
+
+      case 'twilio': {
+        const twilio = (await import('twilio')).default;
+        const client = twilio(config.accountSid, config.authToken);
+        const account = await client.api.accounts(config.accountSid).fetch();
+        if (account.status === 'active') {
+          return res.json({ success: true, message: `Twilio connection successful! Account: ${account.friendlyName}` });
+        }
+        throw new Error('Twilio account is not active');
+      }
+
+      case 'smtp': {
+        const nodemailer = (await import('nodemailer')).default;
+        const transporter = nodemailer.createTransport({
+          host: config.host,
+          port: parseInt(config.port),
+          secure: parseInt(config.port) === 465,
+          auth: {
+            user: config.user,
+            pass: config.pass,
+          },
+        });
+        await transporter.verify();
+        return res.json({ success: true, message: 'SMTP connection successful!' });
+      }
+
+      case 'steadfast': {
+        const axios = (await import('axios')).default;
+        const response = await axios.get(`${config.baseUrl}/get-balance`, {
+          headers: {
+            'Api-Key': config.apiKey,
+            'Secret-Key': config.secretKey,
+            'Content-Type': 'application/json'
+          }
+        });
+        if (response.data && response.status === 200) {
+          return res.json({ success: true, message: 'Steadfast connection successful!' });
+        }
+        throw new Error('Steadfast response error');
+      }
+
+      case 'whatsapp':
+      case 'messenger': {
+        const axios = (await import('axios')).default;
+        // Test Meta graph API with the access token
+        const response = await axios.get(`https://graph.facebook.com/v17.0/me?access_token=${config.accessToken}`);
+        if (response.data && response.data.id) {
+          return res.json({ success: true, message: `${service === 'whatsapp' ? 'WhatsApp' : 'Messenger'} connection successful!` });
+        }
+        throw new Error('Meta API response error');
+      }
+
+      default:
+        return res.status(400).json({ success: false, message: 'Unknown service' });
+    }
+  } catch (err: any) {
+    console.error(`API Test Error (${service}):`, err.message);
+    res.status(500).json({ success: false, message: err.message || 'Connection test failed' });
+  }
+});
+
 // ADMIN: UPLOAD Company Logo
 app.post('/api/admin/profile/upload-logo', requireAdminAuth, upload.single('logo'), async (req: any, res) => {
   try {
@@ -3846,6 +3927,23 @@ app.post('/api/customer/login', async (req, res) => {
 
     const rows = await db.executePrepared("SELECT * FROM customers WHERE email = ? LIMIT 1", [email]);
     if (rows.length === 0) {
+      // Check if this email belongs to an Admin user
+      const adminRows = await db.executePrepared("SELECT * FROM admin_users WHERE email = ? LIMIT 1", [email]);
+      if (adminRows.length > 0) {
+        const adminUser = adminRows[0];
+        const isAdmValid = verifyPassword(password, adminUser.password_hash);
+        if (isAdmValid) {
+          const admToken = jwt.sign({ id: adminUser.id, role: adminUser.role, role_id: adminUser.role_id }, JWT_SECRET, { expiresIn: '7d' });
+          return res.json({
+            success: true,
+            isAdmin: true,
+            redirect: '#/admin/dashboard',
+            token: admToken,
+            customer: { id: adminUser.id, full_name: adminUser.name, email: adminUser.email }
+          });
+        }
+      }
+
       await AuditLogger.log({
         event_type: 'CUSTOMER_LOGIN_FAILED',
         description: `Failed login attempt (email not found): ${email}`,

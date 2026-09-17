@@ -57,14 +57,24 @@ export const accountService = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password: passwordPlain })
       });
-      const data = await res.json();
-      if (res.ok) {
+      let data: any = null;
+      try {
+        data = await res.json();
+      } catch {
+        return { 
+          success: false, 
+          error: res.status === 404 
+            ? 'সার্ভার API পাওয়া যায়নি (404)। হোস্টইঞ্জারে Node.js ব্যাকএন্ড চালু আছে কিনা চেক করুন।' 
+            : `সার্ভার সংযোগ সমস্যা (${res.status})` 
+        };
+      }
+      if (res.ok && data) {
         localStorage.setItem('customer_token', data.token);
         return { success: true, customer: data.customer };
       }
-      return { success: false, error: data.error };
-    } catch {
-      return { success: false, error: 'Network error. Please try again.' };
+      return { success: false, error: data?.error || 'ভুল ইমেইল অথবা পাসওয়ার্ড দিয়েছেন।' };
+    } catch (err: any) {
+      return { success: false, error: 'সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। ইন্টারনেট সংযোগ ও সার্ভার চেক করুন।' };
     }
   },
 
@@ -75,13 +85,23 @@ export const accountService = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      const result = await res.json();
-      if (res.ok) {
+      let result: any = null;
+      try {
+        result = await res.json();
+      } catch {
+        return { 
+          success: false, 
+          error: res.status === 404 
+            ? 'সার্ভার API পাওয়া যায়নি (404)।' 
+            : `সার্ভার সংযোগ সমস্যা (${res.status})` 
+        };
+      }
+      if (res.ok && result) {
         return { success: true };
       }
-      return { success: false, error: result.error };
+      return { success: false, error: result?.error || 'রেজিস্ট্রেশন ব্যর্থ হয়েছে।' };
     } catch {
-      return { success: false, error: 'Network error. Please try again.' };
+      return { success: false, error: 'সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।' };
     }
   },
 

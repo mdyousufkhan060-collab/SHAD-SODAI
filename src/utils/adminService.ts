@@ -31,11 +31,21 @@ export const adminService = {
         body: JSON.stringify({ email, password: plaintext })
       });
 
-      const data = await response.json();
+      let data: any = null;
+      try {
+        data = await response.json();
+      } catch {
+        return {
+          success: false,
+          error: response.status === 404 
+            ? 'এডমিন API পাওয়া যায়নি (404)। Node.js ব্যাকএন্ড সার্ভার চালু আছে কিনা নিশ্চিত করুন।' 
+            : `সার্ভার সংযোগ সমস্যা (${response.status})`
+        };
+      }
       if (!response.ok) {
         return {
           success: false,
-          error: data.error || 'Invalid administrative credentials.'
+          error: data?.error || 'ভুল এডমিন ইমেইল অথবা পাসওয়ার্ড।'
         };
       }
 

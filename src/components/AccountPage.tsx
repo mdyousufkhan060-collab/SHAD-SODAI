@@ -239,19 +239,28 @@ export const AccountPage = ({ onBackToHome }: AccountPageProps) => {
 
     // 2. Fallback to Customer authentication
     const res = await accountService.loginWithEmail(cleanEmail, password);
-    if (res.success && res.customer) {
-      setCurrentUser(res.customer);
-
-      const redirectHash = localStorage.getItem('redirect_after_login');
-      if (redirectHash) {
-        localStorage.removeItem('redirect_after_login');
-        window.location.hash = redirectHash;
+    if (res.success) {
+      if ((res as any).isAdmin) {
+        if ((res as any).token) {
+          localStorage.setItem('admin_session_token', (res as any).token);
+        }
+        window.location.hash = '#/admin/dashboard';
         return;
       }
+      if (res.customer) {
+        setCurrentUser(res.customer);
 
-      setView('dashboard');
-      if (res.customer.language) {
-        changeLanguage(res.customer.language);
+        const redirectHash = localStorage.getItem('redirect_after_login');
+        if (redirectHash) {
+          localStorage.removeItem('redirect_after_login');
+          window.location.hash = redirectHash;
+          return;
+        }
+
+        setView('dashboard');
+        if (res.customer.language) {
+          changeLanguage(res.customer.language);
+        }
       }
     } else {
       setLoginError(res.error || (language === 'bn' ? 'ভুল ইমেইল অথবা পাসওয়ার্ড দিয়েছেন!' : 'Wrong credentials!'));

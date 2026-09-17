@@ -26682,6 +26682,1203 @@
       "bn": "এখনই কিনুন",
       "created_at": "2026-09-17T15:16:21.324Z",
       "updated_at": "2026-09-17T15:16:21.324Z"
+    },
+    {
+      "id": 2632,
+      "translation_key": "home",
+      "category": "Navigation",
+      "en": "Home",
+      "bn": "হোম",
+      "created_at": "2026-09-17T15:34:34.545Z",
+      "updated_at": "2026-09-17T15:34:34.545Z"
+    },
+    {
+      "id": 2633,
+      "translation_key": "categories",
+      "category": "Navigation",
+      "en": "Categories",
+      "bn": "ক্যাটাগরি",
+      "created_at": "2026-09-17T15:34:34.708Z",
+      "updated_at": "2026-09-17T15:34:34.708Z"
+    },
+    {
+      "id": 2634,
+      "translation_key": "offers",
+      "category": "Navigation",
+      "en": "Offers",
+      "bn": "অফারসমূহ",
+      "created_at": "2026-09-17T15:34:34.865Z",
+      "updated_at": "2026-09-17T15:34:34.865Z"
+    },
+    {
+      "id": 2635,
+      "translation_key": "fastSell",
+      "category": "General",
+      "en": "Fast Sell",
+      "bn": "ফাস্ট সেল",
+      "created_at": "2026-09-17T15:34:35.008Z",
+      "updated_at": "2026-09-17T15:34:35.008Z"
+    },
+    {
+      "id": 2636,
+      "translation_key": "support",
+      "category": "Support",
+      "en": "Support",
+      "bn": "সহায়তা",
+      "created_at": "2026-09-17T15:34:35.162Z",
+      "updated_at": "2026-09-17T15:34:35.162Z"
+    },
+    {
+      "id": 2637,
+      "translation_key": "myAccount",
+      "category": "Customer Account",
+      "en": "My Account",
+      "bn": "আমার অ্যাকাউন্ট",
+      "created_at": "2026-09-17T15:34:35.308Z",
+      "updated_at": "2026-09-17T15:34:35.308Z"
+    },
+    {
+      "id": 2638,
+      "translation_key": "orders",
+      "category": "Orders",
+      "en": "Orders",
+      "bn": "আমার অর্ডার",
+      "created_at": "2026-09-17T15:34:35.453Z",
+      "updated_at": "2026-09-17T15:34:35.453Z"
+    },
+    {
+      "id": 2639,
+      "translation_key": "wishlist",
+      "category": "General",
+      "en": "Wishlist",
+      "bn": "উইশলিস্ট",
+      "created_at": "2026-09-17T15:34:35.596Z",
+      "updated_at": "2026-09-17T15:34:35.596Z"
+    },
+    {
+      "id": 2640,
+      "translation_key": "contactUs",
+      "category": "General",
+      "en": "Contact Us",
+      "bn": "যোগাযোগ করুন",
+      "created_at": "2026-09-17T15:34:35.744Z",
+      "updated_at": "2026-09-17T15:34:35.744Z"
+    },
+    {
+      "id": 2641,
+      "translation_key": "aboutUs",
+      "category": "General",
+      "en": "About Us",
+      "bn": "আমাদের সম্পর্কে",
+      "created_at": "2026-09-17T15:34:35.896Z",
+      "updated_at": "2026-09-17T15:34:35.896Z"
+    },
+    {
+      "id": 2642,
+      "translation_key": "viewAll",
+      "category": "General",
+      "en": "View All",
+      "bn": "সবগুলো দেখুন",
+      "created_at": "2026-09-17T15:34:36.042Z",
+      "updated_at": "2026-09-17T15:34:36.042Z"
+    },
+    {
+      "id": 2643,
+      "translation_key": "languageLabel",
+      "category": "General",
+      "en": "Select Language",
+      "bn": "ভাষা নির্বাচন",
+      "created_at": "2026-09-17T15:34:36.199Z",
+      "updated_at": "2026-09-17T15:34:36.199Z"
+    },
+    {
+      "id": 2644,
+      "translation_key": "searchPlaceholder",
+      "category": "General",
+      "en": "Search for organic foods...",
+      "bn": "খাঁটি এবং অর্গানিক ফুড খুঁজুন...",
+      "created_at": "2026-09-17T15:34:36.359Z",
+      "updated_at": "2026-09-17T15:34:36.359Z"
+    },
+    {
+      "id": 2645,
+      "translation_key": "addToCart",
+      "category": "Cart",
+      "en": "Add to Cart",
+      "bn": "কার্টে যোগ করুন",
+      "created_at": "2026-09-17T15:34:36.510Z",
+      "updated_at": "2026-09-17T15:34:36.510Z"
+    },
+    {
+      "id": 2646,
+      "translation_key": "added",
+      "category": "General",
+      "en": "Added!",
+      "bn": "যুক্ত হয়েছে!",
+      "created_at": "2026-09-17T15:34:36.661Z",
+      "updated_at": "2026-09-17T15:34:36.661Z"
+    },
+    {
+      "id": 2647,
+      "translation_key": "live",
+      "category": "General",
+      "en": "Live",
+      "bn": "লাইভ",
+      "created_at": "2026-09-17T15:34:36.811Z",
+      "updated_at": "2026-09-17T15:34:36.811Z"
+    },
+    {
+      "id": 2648,
+      "translation_key": "rating",
+      "category": "General",
+      "en": "Rating",
+      "bn": "রেটিং",
+      "created_at": "2026-09-17T15:34:36.955Z",
+      "updated_at": "2026-09-17T15:34:36.955Z"
+    },
+    {
+      "id": 2649,
+      "translation_key": "price",
+      "category": "General",
+      "en": "Price",
+      "bn": "মূল্য",
+      "created_at": "2026-09-17T15:34:37.103Z",
+      "updated_at": "2026-09-17T15:34:37.103Z"
+    },
+    {
+      "id": 2650,
+      "translation_key": "bdt",
+      "category": "General",
+      "en": "৳",
+      "bn": "৳",
+      "created_at": "2026-09-17T15:34:37.246Z",
+      "updated_at": "2026-09-17T15:34:37.246Z"
+    },
+    {
+      "id": 2651,
+      "translation_key": "privacyPolicy",
+      "category": "Navigation",
+      "en": "Privacy Policy",
+      "bn": "গোপনীয়তা নীতি",
+      "created_at": "2026-09-17T15:34:37.405Z",
+      "updated_at": "2026-09-17T15:34:37.405Z"
+    },
+    {
+      "id": 2652,
+      "translation_key": "termsConditions",
+      "category": "Navigation",
+      "en": "Terms & Conditions",
+      "bn": "শর্তাবলী",
+      "created_at": "2026-09-17T15:34:37.557Z",
+      "updated_at": "2026-09-17T15:34:37.557Z"
+    },
+    {
+      "id": 2653,
+      "translation_key": "allRightsReserved",
+      "category": "General",
+      "en": "All rights reserved.",
+      "bn": "সর্বস্বত্ব সংরক্ষিত।",
+      "created_at": "2026-09-17T15:34:37.708Z",
+      "updated_at": "2026-09-17T15:34:37.708Z"
+    },
+    {
+      "id": 2654,
+      "translation_key": "loginToAccount",
+      "category": "Customer Account",
+      "en": "Welcome Back",
+      "bn": "স্বাগতম",
+      "created_at": "2026-09-17T15:34:37.860Z",
+      "updated_at": "2026-09-17T15:34:37.860Z"
+    },
+    {
+      "id": 2655,
+      "translation_key": "welcomeBack",
+      "category": "General",
+      "en": "Welcome Back",
+      "bn": "স্বাগতম",
+      "created_at": "2026-09-17T15:34:38.008Z",
+      "updated_at": "2026-09-17T15:34:38.008Z"
+    },
+    {
+      "id": 2656,
+      "translation_key": "welcomeBackSubtitle",
+      "category": "General",
+      "en": "Log in to your SHAD SHODAI account to continue shopping.",
+      "bn": "কেনাকাটা চালিয়ে যেতে আপনার SHAD SHODAI অ্যাকাউন্টে লগইন করুন।",
+      "created_at": "2026-09-17T15:34:38.159Z",
+      "updated_at": "2026-09-17T15:34:38.159Z"
+    },
+    {
+      "id": 2657,
+      "translation_key": "createYourAccount",
+      "category": "Customer Account",
+      "en": "Create Your Account",
+      "bn": "নতুন অ্যাকাউন্ট তৈরি করুন",
+      "created_at": "2026-09-17T15:34:38.310Z",
+      "updated_at": "2026-09-17T15:34:38.310Z"
+    },
+    {
+      "id": 2658,
+      "translation_key": "createAccountSubtitle",
+      "category": "Customer Account",
+      "en": "Join SHAD SHODAI and enjoy quality dry foods delivered to your doorstep.",
+      "bn": "SHAD SHODAI-এ যুক্ত হোন এবং প্রিমিয়াম খাঁটি খাবার উপভোগ করুন।",
+      "created_at": "2026-09-17T15:34:38.456Z",
+      "updated_at": "2026-09-17T15:34:38.456Z"
+    },
+    {
+      "id": 2659,
+      "translation_key": "mobileOtpLogin",
+      "category": "Customer Account",
+      "en": "Mobile OTP",
+      "bn": "মোবাইল ওটিপি",
+      "created_at": "2026-09-17T15:34:38.605Z",
+      "updated_at": "2026-09-17T15:34:38.605Z"
+    },
+    {
+      "id": 2660,
+      "translation_key": "emailPasswordLogin",
+      "category": "Customer Account",
+      "en": "Email & Password",
+      "bn": "ইমেইল ও পাসওয়ার্ড",
+      "created_at": "2026-09-17T15:34:38.748Z",
+      "updated_at": "2026-09-17T15:34:38.748Z"
+    },
+    {
+      "id": 2661,
+      "translation_key": "mobileNumber",
+      "category": "General",
+      "en": "Mobile Number",
+      "bn": "মোবাইল নম্বর",
+      "created_at": "2026-09-17T15:34:38.892Z",
+      "updated_at": "2026-09-17T15:34:38.892Z"
+    },
+    {
+      "id": 2662,
+      "translation_key": "mobilePlaceholder",
+      "category": "General",
+      "en": "1712345678",
+      "bn": "1712345678",
+      "created_at": "2026-09-17T15:34:39.042Z",
+      "updated_at": "2026-09-17T15:34:39.042Z"
+    },
+    {
+      "id": 2663,
+      "translation_key": "sendOtp",
+      "category": "Customer Account",
+      "en": "Send OTP",
+      "bn": "ওটিপি পাঠান",
+      "created_at": "2026-09-17T15:34:39.188Z",
+      "updated_at": "2026-09-17T15:34:39.188Z"
+    },
+    {
+      "id": 2664,
+      "translation_key": "verifyOtp",
+      "category": "Customer Account",
+      "en": "Verify & Login",
+      "bn": "যাচাই ও লগইন",
+      "created_at": "2026-09-17T15:34:39.333Z",
+      "updated_at": "2026-09-17T15:34:39.333Z"
+    },
+    {
+      "id": 2665,
+      "translation_key": "enterOtp",
+      "category": "Customer Account",
+      "en": "Enter OTP",
+      "bn": "ওটিপি কোড লিখুন",
+      "created_at": "2026-09-17T15:34:39.479Z",
+      "updated_at": "2026-09-17T15:34:39.479Z"
+    },
+    {
+      "id": 2666,
+      "translation_key": "enterOtpPlaceholder",
+      "category": "Customer Account",
+      "en": "Enter 4-digit OTP",
+      "bn": "",
+      "created_at": "2026-09-17T15:34:39.635Z",
+      "updated_at": "2026-09-17T15:34:39.635Z"
+    },
+    {
+      "id": 2667,
+      "translation_key": "invalidOtp",
+      "category": "Customer Account",
+      "en": "Invalid OTP code, please try again!",
+      "bn": "ভুল ওটিপি কোড, আবার চেষ্টা করুন!",
+      "created_at": "2026-09-17T15:34:39.779Z",
+      "updated_at": "2026-09-17T15:34:39.779Z"
+    },
+    {
+      "id": 2668,
+      "translation_key": "otpSent",
+      "category": "Customer Account",
+      "en": "OTP code sent successfully!",
+      "bn": "ওটিপি কোড পাঠানো হয়েছে!",
+      "created_at": "2026-09-17T15:34:39.921Z",
+      "updated_at": "2026-09-17T15:34:39.921Z"
+    },
+    {
+      "id": 2669,
+      "translation_key": "otpPlaceholder",
+      "category": "Customer Account",
+      "en": "Enter 4-digit OTP",
+      "bn": "৪-ডিজিটের কোড",
+      "created_at": "2026-09-17T15:34:40.070Z",
+      "updated_at": "2026-09-17T15:34:40.070Z"
+    },
+    {
+      "id": 2670,
+      "translation_key": "emailAddress",
+      "category": "General",
+      "en": "Email Address",
+      "bn": "ইমেইল ঠিকানা",
+      "created_at": "2026-09-17T15:34:40.214Z",
+      "updated_at": "2026-09-17T15:34:40.214Z"
+    },
+    {
+      "id": 2671,
+      "translation_key": "emailPlaceholder",
+      "category": "General",
+      "en": "hello@shadshodai.com",
+      "bn": "hello@shadshodai.com",
+      "created_at": "2026-09-17T15:34:40.357Z",
+      "updated_at": "2026-09-17T15:34:40.357Z"
+    },
+    {
+      "id": 2672,
+      "translation_key": "password",
+      "category": "Customer Account",
+      "en": "Password",
+      "bn": "পাসওয়ার্ড",
+      "created_at": "2026-09-17T15:34:40.499Z",
+      "updated_at": "2026-09-17T15:34:40.499Z"
+    },
+    {
+      "id": 2673,
+      "translation_key": "passwordPlaceholder",
+      "category": "Customer Account",
+      "en": "Enter your password",
+      "bn": "আপনার পাসওয়ার্ড লিখুন",
+      "created_at": "2026-09-17T15:34:40.643Z",
+      "updated_at": "2026-09-17T15:34:40.643Z"
+    },
+    {
+      "id": 2674,
+      "translation_key": "createPasswordPlaceholder",
+      "category": "Customer Account",
+      "en": "Create a secure password",
+      "bn": "একটি নিরাপদ পাসওয়ার্ড দিন",
+      "created_at": "2026-09-17T15:34:40.788Z",
+      "updated_at": "2026-09-17T15:34:40.788Z"
+    },
+    {
+      "id": 2675,
+      "translation_key": "confirmPassword",
+      "category": "Customer Account",
+      "en": "Confirm Password",
+      "bn": "পাসওয়ার্ড নিশ্চিত করুন",
+      "created_at": "2026-09-17T15:34:40.935Z",
+      "updated_at": "2026-09-17T15:34:40.935Z"
+    },
+    {
+      "id": 2676,
+      "translation_key": "confirmPasswordPlaceholder",
+      "category": "Customer Account",
+      "en": "Re-enter your password",
+      "bn": "পাসওয়ার্ডটি আবার লিখুন",
+      "created_at": "2026-09-17T15:34:41.079Z",
+      "updated_at": "2026-09-17T15:34:41.079Z"
+    },
+    {
+      "id": 2677,
+      "translation_key": "forgotPassword",
+      "category": "Customer Account",
+      "en": "Forgot Password?",
+      "bn": "পাসওয়ার্ড ভুলে গেছেন?",
+      "created_at": "2026-09-17T15:34:41.222Z",
+      "updated_at": "2026-09-17T15:34:41.222Z"
+    },
+    {
+      "id": 2678,
+      "translation_key": "loginBtn",
+      "category": "Customer Account",
+      "en": "Login",
+      "bn": "লগইন করুন",
+      "created_at": "2026-09-17T15:34:41.364Z",
+      "updated_at": "2026-09-17T15:34:41.364Z"
+    },
+    {
+      "id": 2679,
+      "translation_key": "createAccountBtn",
+      "category": "Customer Account",
+      "en": "Create Account",
+      "bn": "নতুন অ্যাকাউন্ট তৈরি করুন",
+      "created_at": "2026-09-17T15:34:41.512Z",
+      "updated_at": "2026-09-17T15:34:41.512Z"
+    },
+    {
+      "id": 2680,
+      "translation_key": "fullName",
+      "category": "Customer Account",
+      "en": "Full Name",
+      "bn": "পূর্ণ নাম",
+      "created_at": "2026-09-17T15:34:41.654Z",
+      "updated_at": "2026-09-17T15:34:41.654Z"
+    },
+    {
+      "id": 2681,
+      "translation_key": "fullNamePlaceholder",
+      "category": "Customer Account",
+      "en": "MD. IMTIAZ KHAN",
+      "bn": "যেমন: মোঃ ইমতিয়াজ খান",
+      "created_at": "2026-09-17T15:34:41.811Z",
+      "updated_at": "2026-09-17T15:34:41.811Z"
+    },
+    {
+      "id": 2682,
+      "translation_key": "fullAddress",
+      "category": "General",
+      "en": "Full Address",
+      "bn": "সম্পূর্ণ ঠিকানা",
+      "created_at": "2026-09-17T15:34:41.953Z",
+      "updated_at": "2026-09-17T15:34:41.953Z"
+    },
+    {
+      "id": 2683,
+      "translation_key": "fullAddressPlaceholder",
+      "category": "General",
+      "en": "House, Road, Area, City",
+      "bn": "বাড়ি, রাস্তা, এলাকা, শহর",
+      "created_at": "2026-09-17T15:34:42.100Z",
+      "updated_at": "2026-09-17T15:34:42.100Z"
+    },
+    {
+      "id": 2684,
+      "translation_key": "division",
+      "category": "General",
+      "en": "Division",
+      "bn": "বিভাগ",
+      "created_at": "2026-09-17T15:34:42.243Z",
+      "updated_at": "2026-09-17T15:34:42.243Z"
+    },
+    {
+      "id": 2685,
+      "translation_key": "selectDivision",
+      "category": "General",
+      "en": "Select your division",
+      "bn": "বিভাগ নির্বাচন করুন",
+      "created_at": "2026-09-17T15:34:42.386Z",
+      "updated_at": "2026-09-17T15:34:42.386Z"
+    },
+    {
+      "id": 2686,
+      "translation_key": "district",
+      "category": "General",
+      "en": "District",
+      "bn": "জেলা",
+      "created_at": "2026-09-17T15:34:42.531Z",
+      "updated_at": "2026-09-17T15:34:42.531Z"
+    },
+    {
+      "id": 2687,
+      "translation_key": "selectDistrict",
+      "category": "General",
+      "en": "Select your district",
+      "bn": "জেলা নির্বাচন করুন",
+      "created_at": "2026-09-17T15:34:42.689Z",
+      "updated_at": "2026-09-17T15:34:42.689Z"
+    },
+    {
+      "id": 2688,
+      "translation_key": "gender",
+      "category": "Customer Account",
+      "en": "Gender",
+      "bn": "লিঙ্গ",
+      "created_at": "2026-09-17T15:34:42.842Z",
+      "updated_at": "2026-09-17T15:34:42.842Z"
+    },
+    {
+      "id": 2689,
+      "translation_key": "male",
+      "category": "General",
+      "en": "Male",
+      "bn": "পুরুষ",
+      "created_at": "2026-09-17T15:34:42.995Z",
+      "updated_at": "2026-09-17T15:34:42.995Z"
+    },
+    {
+      "id": 2690,
+      "translation_key": "female",
+      "category": "General",
+      "en": "Female",
+      "bn": "নারী",
+      "created_at": "2026-09-17T15:34:43.145Z",
+      "updated_at": "2026-09-17T15:34:43.145Z"
+    },
+    {
+      "id": 2691,
+      "translation_key": "other",
+      "category": "General",
+      "en": "Other",
+      "bn": "অন্যান্য",
+      "created_at": "2026-09-17T15:34:43.293Z",
+      "updated_at": "2026-09-17T15:34:43.293Z"
+    },
+    {
+      "id": 2692,
+      "translation_key": "dontHaveAccount",
+      "category": "Customer Account",
+      "en": "Don't have an account?",
+      "bn": "কোনো অ্যাকাউন্ট নেই?",
+      "created_at": "2026-09-17T15:34:43.441Z",
+      "updated_at": "2026-09-17T15:34:43.441Z"
+    },
+    {
+      "id": 2693,
+      "translation_key": "alreadyHaveAccount",
+      "category": "Customer Account",
+      "en": "Already have an account?",
+      "bn": "ইতিমধ্যে অ্যাকাউন্ট আছে?",
+      "created_at": "2026-09-17T15:34:43.587Z",
+      "updated_at": "2026-09-17T15:34:43.587Z"
+    },
+    {
+      "id": 2694,
+      "translation_key": "backBtn",
+      "category": "General",
+      "en": "Back",
+      "bn": "ফিরে যান",
+      "created_at": "2026-09-17T15:34:43.734Z",
+      "updated_at": "2026-09-17T15:34:43.734Z"
+    },
+    {
+      "id": 2695,
+      "translation_key": "registrationSuccess",
+      "category": "General",
+      "en": "Account created successfully!",
+      "bn": "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!",
+      "created_at": "2026-09-17T15:34:43.883Z",
+      "updated_at": "2026-09-17T15:34:43.883Z"
+    },
+    {
+      "id": 2696,
+      "translation_key": "passwordsDoNotMatch",
+      "category": "Customer Account",
+      "en": "Passwords do not match!",
+      "bn": "পাসওয়ার্ড দুটি মেলেনি!",
+      "created_at": "2026-09-17T15:34:44.029Z",
+      "updated_at": "2026-09-17T15:34:44.029Z"
+    },
+    {
+      "id": 2697,
+      "translation_key": "allFieldsRequired",
+      "category": "General",
+      "en": "Please provide all required fields!",
+      "bn": "অনুগ্রহ করে সব তথ্য প্রদান করুন!",
+      "created_at": "2026-09-17T15:34:44.174Z",
+      "updated_at": "2026-09-17T15:34:44.174Z"
+    },
+    {
+      "id": 2698,
+      "translation_key": "shortPasswordError",
+      "category": "Customer Account",
+      "en": "Password must be at least 8 characters long!",
+      "bn": "পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে!",
+      "created_at": "2026-09-17T15:34:44.346Z",
+      "updated_at": "2026-09-17T15:34:44.346Z"
+    },
+    {
+      "id": 2699,
+      "translation_key": "invalidPhoneError",
+      "category": "Customer Account",
+      "en": "Provide a valid 11-digit Bangladesh mobile number!",
+      "bn": "১১-ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর দিন!",
+      "created_at": "2026-09-17T15:34:44.491Z",
+      "updated_at": "2026-09-17T15:34:44.491Z"
+    },
+    {
+      "id": 2700,
+      "translation_key": "myProfile",
+      "category": "General",
+      "en": "My Profile",
+      "bn": "আমার প্রোফাইল",
+      "created_at": "2026-09-17T15:34:44.639Z",
+      "updated_at": "2026-09-17T15:34:44.639Z"
+    },
+    {
+      "id": 2701,
+      "translation_key": "myOrders",
+      "category": "Orders",
+      "en": "My Orders",
+      "bn": "আমার অর্ডারসমূহ",
+      "created_at": "2026-09-17T15:34:44.787Z",
+      "updated_at": "2026-09-17T15:34:44.787Z"
+    },
+    {
+      "id": 2702,
+      "translation_key": "myAddresses",
+      "category": "General",
+      "en": "My Addresses",
+      "bn": "আমার ঠিকানা",
+      "created_at": "2026-09-17T15:34:44.937Z",
+      "updated_at": "2026-09-17T15:34:44.937Z"
+    },
+    {
+      "id": 2703,
+      "translation_key": "changePassword",
+      "category": "Customer Account",
+      "en": "Change Password",
+      "bn": "পাসওয়ার্ড পরিবর্তন",
+      "created_at": "2026-09-17T15:34:45.090Z",
+      "updated_at": "2026-09-17T15:34:45.090Z"
+    },
+    {
+      "id": 2704,
+      "translation_key": "logout",
+      "category": "General",
+      "en": "Logout",
+      "bn": "লগআউট",
+      "created_at": "2026-09-17T15:34:45.237Z",
+      "updated_at": "2026-09-17T15:34:45.237Z"
+    },
+    {
+      "id": 2705,
+      "translation_key": "profileDetails",
+      "category": "General",
+      "en": "Profile Details",
+      "bn": "প্রোফাইল বিবরণী",
+      "created_at": "2026-09-17T15:34:45.403Z",
+      "updated_at": "2026-09-17T15:34:45.403Z"
+    },
+    {
+      "id": 2706,
+      "translation_key": "saveChanges",
+      "category": "General",
+      "en": "Save Changes",
+      "bn": "পরিবর্তন সংরক্ষণ করুন",
+      "created_at": "2026-09-17T15:34:45.568Z",
+      "updated_at": "2026-09-17T15:34:45.568Z"
+    },
+    {
+      "id": 2707,
+      "translation_key": "editProfile",
+      "category": "General",
+      "en": "Edit Profile",
+      "bn": "প্রোফাইল সম্পাদনা",
+      "created_at": "2026-09-17T15:34:45.718Z",
+      "updated_at": "2026-09-17T15:34:45.718Z"
+    },
+    {
+      "id": 2708,
+      "translation_key": "profileSaved",
+      "category": "General",
+      "en": "Profile saved successfully!",
+      "bn": "প্রোফাইল সফলভাবে সংরক্ষিত হয়েছে!",
+      "created_at": "2026-09-17T15:34:45.877Z",
+      "updated_at": "2026-09-17T15:34:45.877Z"
+    },
+    {
+      "id": 2709,
+      "translation_key": "noOrders",
+      "category": "Orders",
+      "en": "You do not have any orders yet!",
+      "bn": "আপনার কোনো অর্ডার নেই!",
+      "created_at": "2026-09-17T15:34:46.024Z",
+      "updated_at": "2026-09-17T15:34:46.024Z"
+    },
+    {
+      "id": 2710,
+      "translation_key": "orderId",
+      "category": "Orders",
+      "en": "Order ID",
+      "bn": "অর্ডার আইডি",
+      "created_at": "2026-09-17T15:34:46.173Z",
+      "updated_at": "2026-09-17T15:34:46.173Z"
+    },
+    {
+      "id": 2711,
+      "translation_key": "date",
+      "category": "General",
+      "en": "Date",
+      "bn": "তারিখ",
+      "created_at": "2026-09-17T15:34:46.322Z",
+      "updated_at": "2026-09-17T15:34:46.322Z"
+    },
+    {
+      "id": 2712,
+      "translation_key": "totalAmount",
+      "category": "General",
+      "en": "Total Amount",
+      "bn": "মোট মূল্য",
+      "created_at": "2026-09-17T15:34:46.473Z",
+      "updated_at": "2026-09-17T15:34:46.473Z"
+    },
+    {
+      "id": 2713,
+      "translation_key": "orderStatus",
+      "category": "Orders",
+      "en": "Order Status",
+      "bn": "অর্ডার স্ট্যাটাস",
+      "created_at": "2026-09-17T15:34:46.626Z",
+      "updated_at": "2026-09-17T15:34:46.626Z"
+    },
+    {
+      "id": 2714,
+      "translation_key": "statusPending",
+      "category": "General",
+      "en": "Pending",
+      "bn": "অপেক্ষমান",
+      "created_at": "2026-09-17T15:34:46.785Z",
+      "updated_at": "2026-09-17T15:34:46.785Z"
+    },
+    {
+      "id": 2715,
+      "translation_key": "statusConfirmed",
+      "category": "General",
+      "en": "Confirmed",
+      "bn": "নিশ্চিত করা হয়েছে",
+      "created_at": "2026-09-17T15:34:46.944Z",
+      "updated_at": "2026-09-17T15:34:46.944Z"
+    },
+    {
+      "id": 2716,
+      "translation_key": "statusProcessing",
+      "category": "General",
+      "en": "Processing",
+      "bn": "প্রক্রিয়াধীন",
+      "created_at": "2026-09-17T15:34:47.089Z",
+      "updated_at": "2026-09-17T15:34:47.089Z"
+    },
+    {
+      "id": 2717,
+      "translation_key": "statusShipped",
+      "category": "General",
+      "en": "Shipped",
+      "bn": "পাঠানো হয়েছে",
+      "created_at": "2026-09-17T15:34:47.237Z",
+      "updated_at": "2026-09-17T15:34:47.237Z"
+    },
+    {
+      "id": 2718,
+      "translation_key": "statusDelivered",
+      "category": "General",
+      "en": "Delivered",
+      "bn": "ডেলিভারি সম্পন্ন",
+      "created_at": "2026-09-17T15:34:47.388Z",
+      "updated_at": "2026-09-17T15:34:47.388Z"
+    },
+    {
+      "id": 2719,
+      "translation_key": "statusCancelled",
+      "category": "General",
+      "en": "Cancelled",
+      "bn": "বাতিল করা হয়েছে",
+      "created_at": "2026-09-17T15:34:47.534Z",
+      "updated_at": "2026-09-17T15:34:47.534Z"
+    },
+    {
+      "id": 2720,
+      "translation_key": "supportTitle",
+      "category": "Support",
+      "en": "Customer Care & Support",
+      "bn": "গ্রাহক সেবা ও সহায়তা",
+      "created_at": "2026-09-17T15:34:47.681Z",
+      "updated_at": "2026-09-17T15:34:47.681Z"
+    },
+    {
+      "id": 2721,
+      "translation_key": "supportSub",
+      "category": "Support",
+      "en": "We are available 24/7 to assist you",
+      "bn": "আমরা ২৪/৭ আপনার সহায়তায় নিয়োজিত আছি",
+      "created_at": "2026-09-17T15:34:47.831Z",
+      "updated_at": "2026-09-17T15:34:47.831Z"
+    },
+    {
+      "id": 2722,
+      "translation_key": "contactSupport",
+      "category": "Support",
+      "en": "Contact Support Directly",
+      "bn": "সরাসরি যোগাযোগ করুন",
+      "created_at": "2026-09-17T15:34:47.981Z",
+      "updated_at": "2026-09-17T15:34:47.981Z"
+    },
+    {
+      "id": 2723,
+      "translation_key": "orderHelp",
+      "category": "Orders",
+      "en": "Order Assistance",
+      "bn": "অর্ডার সংক্রান্ত সমস্যা",
+      "created_at": "2026-09-17T15:34:48.129Z",
+      "updated_at": "2026-09-17T15:34:48.129Z"
+    },
+    {
+      "id": 2724,
+      "translation_key": "deliveryHelp",
+      "category": "General",
+      "en": "Delivery Inquiry",
+      "bn": "ডেলিভারি সংক্রান্ত জিজ্ঞাসা",
+      "created_at": "2026-09-17T15:34:48.276Z",
+      "updated_at": "2026-09-17T15:34:48.276Z"
+    },
+    {
+      "id": 2725,
+      "translation_key": "paymentHelp",
+      "category": "General",
+      "en": "Payment Help",
+      "bn": "পেমেন্ট সাহায্য",
+      "created_at": "2026-09-17T15:34:48.424Z",
+      "updated_at": "2026-09-17T15:34:48.424Z"
+    },
+    {
+      "id": 2726,
+      "translation_key": "returnRefundHelp",
+      "category": "General",
+      "en": "Return & Refund Policy",
+      "bn": "রিটার্ন ও রিফান্ড নীতি",
+      "created_at": "2026-09-17T15:34:48.578Z",
+      "updated_at": "2026-09-17T15:34:48.578Z"
+    },
+    {
+      "id": 2727,
+      "translation_key": "faq",
+      "category": "General",
+      "en": "Frequently Asked Questions (FAQ)",
+      "bn": "সাধারণ জিজ্ঞাসা (FAQ)",
+      "created_at": "2026-09-17T15:34:48.733Z",
+      "updated_at": "2026-09-17T15:34:48.733Z"
+    },
+    {
+      "id": 2728,
+      "translation_key": "callUs",
+      "category": "General",
+      "en": "Call Us",
+      "bn": "ফোন করুন",
+      "created_at": "2026-09-17T15:34:48.890Z",
+      "updated_at": "2026-09-17T15:34:48.890Z"
+    },
+    {
+      "id": 2729,
+      "translation_key": "emailUs",
+      "category": "General",
+      "en": "Email Us",
+      "bn": "ইমেইল করুন",
+      "created_at": "2026-09-17T15:34:49.047Z",
+      "updated_at": "2026-09-17T15:34:49.047Z"
+    },
+    {
+      "id": 2730,
+      "translation_key": "trackOrder",
+      "category": "Orders",
+      "en": "Track Order",
+      "bn": "অর্ডার ট্র্যাকিং",
+      "created_at": "2026-09-17T15:34:49.200Z",
+      "updated_at": "2026-09-17T15:34:49.200Z"
+    },
+    {
+      "id": 2731,
+      "translation_key": "returnRefund",
+      "category": "General",
+      "en": "Return & Refund",
+      "bn": "রিটার্ন ও রিফান্ড",
+      "created_at": "2026-09-17T15:34:49.348Z",
+      "updated_at": "2026-09-17T15:34:49.348Z"
+    },
+    {
+      "id": 2732,
+      "translation_key": "cancelOrder",
+      "category": "Orders",
+      "en": "Cancel Order",
+      "bn": "অর্ডার বাতিলকরণ",
+      "created_at": "2026-09-17T15:34:49.496Z",
+      "updated_at": "2026-09-17T15:34:49.496Z"
+    },
+    {
+      "id": 2733,
+      "translation_key": "accountHelp",
+      "category": "Customer Account",
+      "en": "Account Help",
+      "bn": "অ্যাকাউন্ট সহায়তা",
+      "created_at": "2026-09-17T15:34:49.643Z",
+      "updated_at": "2026-09-17T15:34:49.643Z"
+    },
+    {
+      "id": 2734,
+      "translation_key": "loginHelp",
+      "category": "Customer Account",
+      "en": "Login Help",
+      "bn": "লগইন সাহায্য",
+      "created_at": "2026-09-17T15:34:49.796Z",
+      "updated_at": "2026-09-17T15:34:49.796Z"
+    },
+    {
+      "id": 2735,
+      "translation_key": "howToOrder",
+      "category": "Orders",
+      "en": "How to Order",
+      "bn": "অর্ডার করার নিয়ম",
+      "created_at": "2026-09-17T15:34:49.945Z",
+      "updated_at": "2026-09-17T15:34:49.945Z"
+    },
+    {
+      "id": 2736,
+      "translation_key": "deliveryInfo",
+      "category": "General",
+      "en": "Delivery Info",
+      "bn": "ডেলিভারি সংক্রান্ত তথ্য",
+      "created_at": "2026-09-17T15:34:50.096Z",
+      "updated_at": "2026-09-17T15:34:50.096Z"
+    },
+    {
+      "id": 2737,
+      "translation_key": "chatWithSupport",
+      "category": "Support",
+      "en": "Chat with Support",
+      "bn": "সরাসরি চ্যাট করুন",
+      "created_at": "2026-09-17T15:34:50.266Z",
+      "updated_at": "2026-09-17T15:34:50.266Z"
+    },
+    {
+      "id": 2738,
+      "translation_key": "submitTicket",
+      "category": "Support",
+      "en": "Open Support Ticket",
+      "bn": "সাপোর্ট টিকিট খুলুন",
+      "created_at": "2026-09-17T15:34:50.421Z",
+      "updated_at": "2026-09-17T15:34:50.421Z"
+    },
+    {
+      "id": 2739,
+      "translation_key": "myTickets",
+      "category": "Support",
+      "en": "My Tickets",
+      "bn": "আমার টিকিটসমূহ",
+      "created_at": "2026-09-17T15:34:50.573Z",
+      "updated_at": "2026-09-17T15:34:50.574Z"
+    },
+    {
+      "id": 2740,
+      "translation_key": "ticketNumber",
+      "category": "Support",
+      "en": "Ticket ID",
+      "bn": "টিকিট আইডি",
+      "created_at": "2026-09-17T15:34:50.727Z",
+      "updated_at": "2026-09-17T15:34:50.727Z"
+    },
+    {
+      "id": 2741,
+      "translation_key": "subject",
+      "category": "General",
+      "en": "Subject",
+      "bn": "বিষয়",
+      "created_at": "2026-09-17T15:34:50.880Z",
+      "updated_at": "2026-09-17T15:34:50.880Z"
+    },
+    {
+      "id": 2742,
+      "translation_key": "category",
+      "category": "General",
+      "en": "Category",
+      "bn": "ক্যাটাগরি",
+      "created_at": "2026-09-17T15:34:51.039Z",
+      "updated_at": "2026-09-17T15:34:51.039Z"
+    },
+    {
+      "id": 2743,
+      "translation_key": "status",
+      "category": "General",
+      "en": "Status",
+      "bn": "অবস্থা",
+      "created_at": "2026-09-17T15:34:51.190Z",
+      "updated_at": "2026-09-17T15:34:51.190Z"
+    },
+    {
+      "id": 2744,
+      "translation_key": "actions",
+      "category": "General",
+      "en": "Actions",
+      "bn": "অ্যাকশন",
+      "created_at": "2026-09-17T15:34:51.340Z",
+      "updated_at": "2026-09-17T15:34:51.340Z"
+    },
+    {
+      "id": 2745,
+      "translation_key": "openTicketBtn",
+      "category": "Support",
+      "en": "Create Support Ticket",
+      "bn": "নতুন টিকিট তৈরি করুন",
+      "created_at": "2026-09-17T15:34:51.494Z",
+      "updated_at": "2026-09-17T15:34:51.494Z"
+    },
+    {
+      "id": 2746,
+      "translation_key": "submitBtn",
+      "category": "General",
+      "en": "Submit",
+      "bn": "জমা দিন",
+      "created_at": "2026-09-17T15:34:51.641Z",
+      "updated_at": "2026-09-17T15:34:51.641Z"
+    },
+    {
+      "id": 2747,
+      "translation_key": "orderIdLabel",
+      "category": "Orders",
+      "en": "Enter Order ID",
+      "bn": "অর্ডার আইডি লিখুন",
+      "created_at": "2026-09-17T15:34:51.786Z",
+      "updated_at": "2026-09-17T15:34:51.786Z"
+    },
+    {
+      "id": 2748,
+      "translation_key": "trackBtn",
+      "category": "General",
+      "en": "Track",
+      "bn": "ট্র্যাক করুন",
+      "created_at": "2026-09-17T15:34:51.940Z",
+      "updated_at": "2026-09-17T15:34:51.940Z"
+    },
+    {
+      "id": 2749,
+      "translation_key": "orderNotFound",
+      "category": "Orders",
+      "en": "Order Not Found!",
+      "bn": "কোনো অর্ডার পাওয়া যায়নি!",
+      "created_at": "2026-09-17T15:34:52.100Z",
+      "updated_at": "2026-09-17T15:34:52.100Z"
+    },
+    {
+      "id": 2750,
+      "translation_key": "backToSupport",
+      "category": "Support",
+      "en": "Back to Support",
+      "bn": "সাপোর্টে ফিরে যান",
+      "created_at": "2026-09-17T15:34:52.258Z",
+      "updated_at": "2026-09-17T15:34:52.258Z"
+    },
+    {
+      "id": 2751,
+      "translation_key": "newTicketTitle",
+      "category": "Support",
+      "en": "Create New Support Ticket",
+      "bn": "নতুন সাপোর্ট টিকিট তৈরি করুন",
+      "created_at": "2026-09-17T15:34:52.408Z",
+      "updated_at": "2026-09-17T15:34:52.408Z"
+    },
+    {
+      "id": 2752,
+      "translation_key": "attachment",
+      "category": "General",
+      "en": "Attachment (Image)",
+      "bn": "সংযুক্তি (ছবি)",
+      "created_at": "2026-09-17T15:34:52.574Z",
+      "updated_at": "2026-09-17T15:34:52.574Z"
+    },
+    {
+      "id": 2753,
+      "translation_key": "chatHistory",
+      "category": "Support",
+      "en": "Chat History",
+      "bn": "চ্যাট ইতিহাস",
+      "created_at": "2026-09-17T15:34:52.736Z",
+      "updated_at": "2026-09-17T15:34:52.736Z"
+    },
+    {
+      "id": 2754,
+      "translation_key": "typeMessage",
+      "category": "General",
+      "en": "Type your message...",
+      "bn": "আপনার বার্তাটি লিখুন...",
+      "created_at": "2026-09-17T15:34:52.892Z",
+      "updated_at": "2026-09-17T15:34:52.892Z"
+    },
+    {
+      "id": 2755,
+      "translation_key": "returnFormTitle",
+      "category": "General",
+      "en": "Product Return & Refund Request Form",
+      "bn": "পণ্য ফেরত / রিফান্ড আবেদন ফর্ম",
+      "created_at": "2026-09-17T15:34:53.047Z",
+      "updated_at": "2026-09-17T15:34:53.047Z"
+    },
+    {
+      "id": 2756,
+      "translation_key": "selectProduct",
+      "category": "General",
+      "en": "Select Product",
+      "bn": "পণ্য নির্বাচন করুন",
+      "created_at": "2026-09-17T15:34:53.215Z",
+      "updated_at": "2026-09-17T15:34:53.215Z"
+    },
+    {
+      "id": 2757,
+      "translation_key": "returnReason",
+      "category": "General",
+      "en": "Reason for Return",
+      "bn": "ফেরত দেওয়ার কারণ",
+      "created_at": "2026-09-17T15:34:53.365Z",
+      "updated_at": "2026-09-17T15:34:53.365Z"
+    },
+    {
+      "id": 2758,
+      "translation_key": "returnReasonPlaceholder",
+      "category": "General",
+      "en": "e.g. Damaged bottle, spoiled product",
+      "bn": "যেমন: বোতল ভাঙা, নষ্ট পণ্য এসেছে",
+      "created_at": "2026-09-17T15:34:53.533Z",
+      "updated_at": "2026-09-17T15:34:53.533Z"
+    },
+    {
+      "id": 2759,
+      "translation_key": "returnDesc",
+      "category": "General",
+      "en": "Detailed Description",
+      "bn": "বিস্তারিত বিবরণ",
+      "created_at": "2026-09-17T15:34:53.680Z",
+      "updated_at": "2026-09-17T15:34:53.680Z"
+    },
+    {
+      "id": 2760,
+      "translation_key": "uploadImage",
+      "category": "General",
+      "en": "Upload Product Image",
+      "bn": "পণ্যের ছবি আপলোড করুন",
+      "created_at": "2026-09-17T15:34:53.834Z",
+      "updated_at": "2026-09-17T15:34:53.834Z"
+    },
+    {
+      "id": 2761,
+      "translation_key": "returnSuccess",
+      "category": "General",
+      "en": "Your return request has been submitted successfully!",
+      "bn": "আপনার রিটার্ন আবেদনটি সফলভাবে জমা হয়েছে!",
+      "created_at": "2026-09-17T15:34:53.981Z",
+      "updated_at": "2026-09-17T15:34:53.981Z"
+    },
+    {
+      "id": 2762,
+      "translation_key": "ticketSuccess",
+      "category": "Support",
+      "en": "Support ticket created successfully!",
+      "bn": "সাপোর্ট টিকিট সফলভাবে তৈরি হয়েছে!",
+      "created_at": "2026-09-17T15:34:54.131Z",
+      "updated_at": "2026-09-17T15:34:54.131Z"
+    },
+    {
+      "id": 2763,
+      "translation_key": "promoBannerTitle",
+      "category": "General",
+      "en": "Premium Offers & Promotions",
+      "bn": "প্রিমিয়াম অফার ও প্রমোশন",
+      "created_at": "2026-09-17T15:34:54.279Z",
+      "updated_at": "2026-09-17T15:34:54.279Z"
+    },
+    {
+      "id": 2764,
+      "translation_key": "shopNow",
+      "category": "General",
+      "en": "Shop Now",
+      "bn": "এখনই কিনুন",
+      "created_at": "2026-09-17T15:34:54.428Z",
+      "updated_at": "2026-09-17T15:34:54.428Z"
     }
   ]
 }
